@@ -4,7 +4,14 @@
   box-sizing: border-box;
 }
 
-html, body {
+html {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
+body {
   width: 100%;
   height: 100vh;
   overflow: hidden;
@@ -14,7 +21,9 @@ html, body {
 body.scrollable {
   overflow-y: auto;
   height: auto;
+  min-height: 100vh;
 }
+
 
 .fullscreen-split {
   display: flex;
@@ -149,9 +158,9 @@ body.scrollable {
   text-decoration: none;
   color: #f5eee6;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 1.65rem;
+  font-size: 1.45rem;
   font-weight: 500;
-  letter-spacing: -0.3px;
+  letter-spacing: -0.2px;
   line-height: 1.1;
 }
 
@@ -161,7 +170,7 @@ body.scrollable {
   font-weight: 400;
   color: #f5eee6;
   opacity: 0.8;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.4px;
   margin-top: 0.1rem;
 }
 
@@ -177,10 +186,12 @@ body.scrollable {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.05rem;
   font-weight: 400;
-  letter-spacing: 0.6px;
-  opacity: 0.7;
-  transition: opacity 0.3s ease, border-bottom 0.3s ease;
-  padding-bottom: 0.2rem;
+  letter-spacing: 0.5px;
+  opacity: 0.75;
+  transition: opacity 0.3s ease, border-color 0.3s ease;
+  padding-bottom: 0.15rem;
+  border-bottom: 1px solid transparent;
+  display: inline-block;
 }
 
 .inner-nav a:hover {
@@ -189,7 +200,7 @@ body.scrollable {
 
 .inner-nav a.active {
   opacity: 1;
-  border-bottom: 1px solid #f5eee6;
+  border-bottom-color: #f5eee6;
 }
 
 .about-page-split {
@@ -207,7 +218,7 @@ body.scrollable {
   align-items: flex-start;
   margin-top: 55px;
   height: calc(100vh - 55px);
-  padding: 5rem 3rem 3rem;
+  padding: 3rem 3rem 3rem;
 }
 
 .about-img-container {
@@ -232,7 +243,7 @@ body.scrollable {
   justify-content: flex-start;
   margin-top: 55px;
   height: calc(100vh - 55px);
-  padding: 5rem 5rem 3rem 2rem;
+  padding: 3rem 5rem 3rem 2rem;
   overflow-y: auto;
 }
 
@@ -308,7 +319,7 @@ body.scrollable {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 4rem 4rem 2.5rem;
+  padding: 3rem 4rem 2rem;
   text-align: center;
   flex-shrink: 0;
 }
@@ -429,5 +440,428 @@ body.scrollable {
   filter: brightness(1);
   transform: scale(1.02);
 }
+
+.portraits-page {
+  width: 100%;
+  background-color: #310d0d;
+  color: #f5eee6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.portraits-hero {
+  margin-top: 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4.8rem 2rem 0;
+  text-align: center;
+  width: 100%;
+}
+
+.portraits-hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 4.2vw, 3.4rem);
+  font-weight: 400;
+  letter-spacing: -0.3px;
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+  color: #f5eee6;
+}
+
+.portraits-hero-sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.15rem, 1.8vw, 1.45rem);
+  font-weight: 400;
+  opacity: 0.85;
+  letter-spacing: 0.3px;
+  margin-bottom: 3.5rem;
+  max-width: 680px;
+  color: #f5eee6;
+}
+
+.portraits-divider-wrap {
+  width: 100%;
+  padding: 0 4rem;
+}
+
+.portraits-divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(245, 238, 230, 0.2);
+}
+
+.portraits-grid-section {
+  padding: 3.2rem 4rem 5rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.portraits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.portrait-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.portrait-card {
+  border: 1px solid rgba(245, 238, 230, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.portrait-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(245, 238, 230, 0.35);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.portrait-img-wrap {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.portrait-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.75);
+  transition: transform 0.5s ease, filter 0.4s ease;
+}
+
+.portrait-card:hover .portrait-img-wrap img {
+  transform: scale(1.03);
+  filter: brightness(0.9);
+}
+
+.portrait-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  text-align: center;
+  padding: 1rem 1rem;
+  color: #f5eee6;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 900px) {
+  .portraits-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+  .portraits-divider-wrap,
+  .portraits-grid-section {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .portraits-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .portraits-grid-section {
+    padding: 2rem 1.5rem 4rem;
+  }
+  .portraits-divider-wrap {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+
+.portrait-detail-page,
+.portrait-story-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #310d0d;
+  color: #f5eee6;
+  padding: 3rem 2rem 6rem;
+  margin-top: 55px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.portrait-story-container {
+  max-width: 860px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.portrait-story-nav,
+.portrait-detail-nav {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 2.5rem;
+  width: 100%;
+}
+
+.portrait-back-link {
+  color: #f5eee6;
+  text-decoration: none;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+  opacity: 0.75;
+  transition: opacity 0.3s ease;
+}
+
+.portrait-back-link:hover {
+  opacity: 1;
+}
+
+.portrait-detail-hero {
+  max-width: 860px;
+  width: 100%;
+  margin: 0 auto 5rem;
+  display: flex;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.portrait-detail-img-container {
+  flex: 1;
+  max-width: 420px;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.portrait-detail-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.portrait-detail-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.portrait-detail-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+  color: #f5eee6;
+}
+
+.portrait-detail-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+  font-weight: 400;
+  font-style: italic;
+  opacity: 0.85;
+  margin-bottom: 1.5rem;
+  color: #f5eee6;
+}
+
+.portrait-detail-description {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
+  line-height: 1.7;
+  opacity: 0.9;
+  color: #f5eee6;
+}
+
+.portrait-story-section {
+  width: 100%;
+  margin-bottom: 4.5rem;
+}
+
+.portrait-story-two-col {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 3.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+.portrait-story-two-col-invert {
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 3.5rem;
+  align-items: start;
+  width: 100%;
+}
+
+.portrait-story-stagger {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+.portrait-story-two-col.align-top {
+  align-items: start;
+}
+
+.portrait-story-two-col.align-bottom {
+  align-items: end;
+}
+
+.portrait-story-left-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  width: 100%;
+}
+
+.portrait-story-img-wrap {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.portrait-story-img-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.portrait-story-img-wrap:hover img {
+  filter: brightness(1.05);
+}
+
+.portrait-story-img-small-1 {
+  width: 80%;
+  align-self: flex-start;
+}
+
+.portrait-story-img-small-2 {
+  width: 88%;
+  align-self: flex-end;
+}
+
+.portrait-story-img-spine {
+  width: 82%;
+  align-self: center;
+}
+
+.portrait-story-img-dark-1 {
+  width: 88%;
+  align-self: flex-start;
+}
+
+.portrait-story-img-dark-2 {
+  width: 58%;
+  align-self: flex-end;
+}
+
+.portrait-story-img-top-right {
+  width: 78%;
+  align-self: flex-start;
+}
+
+.portrait-story-stagger-left {
+  width: 82%;
+  align-self: flex-start;
+}
+
+.portrait-story-stagger-right {
+  width: 95%;
+  margin-top: 5rem;
+  align-self: flex-end;
+}
+
+.portrait-story-centerpiece {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.portrait-story-centerpiece .portrait-story-img-wrap {
+  width: 72%;
+  max-width: 540px;
+}
+
+.portrait-story-wide {
+  width: 100%;
+}
+
+.portrait-story-wide .portrait-story-img-wrap {
+  width: 100%;
+}
+
+.portrait-story-footer {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .portrait-story-page,
+  .portrait-detail-page {
+    padding: 2rem 1.25rem 4rem;
+  }
+  .portrait-detail-hero {
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  .portrait-detail-img-container {
+    max-width: 100%;
+    width: 100%;
+  }
+  .portrait-story-two-col,
+  .portrait-story-two-col-invert,
+  .portrait-story-stagger {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .portrait-story-left-stack {
+    gap: 2rem;
+  }
+  .portrait-story-img-small-1,
+  .portrait-story-img-small-2,
+  .portrait-story-img-spine,
+  .portrait-story-img-dark-1,
+  .portrait-story-img-dark-2,
+  .portrait-story-img-top-right,
+  .portrait-story-stagger-left,
+  .portrait-story-stagger-right {
+    width: 100%;
+    align-self: center;
+    margin-top: 0;
+  }
+  .portrait-story-centerpiece .portrait-story-img-wrap {
+    width: 100%;
+  }
+  .portrait-story-section {
+    margin-bottom: 3rem;
+  }
+}
+
+
 
 
