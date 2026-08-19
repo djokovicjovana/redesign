@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="sr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Booking - Jovana Đoković</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="scrollable">
 
   <header class="inner-header">
@@ -28,22 +32,136 @@
     </nav>
   </header>
 
-  <main class="about-page-split">
-    
-    <section class="about-left">
-      <div class="about-img-container">
-        <img src="slika.jpg" alt="Jovana Đoković Booking">
+  <main class="booking-page">
+
+    <section class="booking-hero">
+      <h1 class="booking-hero-title">Let's Create Together.</h1>
+      <p class="booking-hero-sub">Available for portraits, events, commercial shoots and artistic collaborations
+        worldwide.</p>
+      <div class="booking-divider-wrap">
+        <div class="booking-divider"></div>
       </div>
     </section>
 
-    <section class="about-right">
-      <h1 class="about-title">Booking</h1>
-      <div class="about-text">
-        <p>Available for commercial bookings, personal portrait sessions, and collaborative projects worldwide. Reach out for availability and rate details.</p>
+    <section class="booking-content-section">
+      <div class="booking-container">
+
+        <div class="booking-info-col">
+          <div class="booking-info-card">
+            <span class="booking-info-label">Inquiries & Sessions</span>
+            <h2 class="booking-info-heading">Capturing genuine emotion and artistic vision.</h2>
+            <p class="booking-info-desc">
+              Every project begins with a conversation. Whether you need an intimate portrait session, full event
+              coverage, or tailored product visuals, let's craft imagery that speaks.
+            </p>
+
+            <div class="booking-detail-list">
+              <div class="booking-detail-item">
+                <span class="booking-detail-title">Location</span>
+                <span class="booking-detail-val">Novi Sad / Belgrade &bull; Worldwide Available</span>
+              </div>
+              <div class="booking-detail-item">
+                <span class="booking-detail-title">Direct Email</span>
+                <a href="mailto:djokovicjovana77@gmail.com" class="booking-detail-link">djokovicjovana77@gmail.com</a>
+              </div>
+              <div class="booking-detail-item">
+                <span class="booking-detail-title">Instagram</span>
+                <a href="https://instagram.com/anemoia.7" target="_blank" rel="noopener noreferrer"
+                  class="booking-detail-link">@anemoia.7</a>
+              </div>
+            </div>
+
+            <div class="booking-process">
+              <span class="booking-process-label">The Process</span>
+              <div class="booking-steps">
+                <div class="booking-step">
+                  <span class="booking-step-num">01</span>
+                  <div class="booking-step-content">
+                    <h3 class="booking-step-title">Consultation & Mood</h3>
+                    <p class="booking-step-text">Discussing ideas, visual references, moodboards, and location styling.
+                    </p>
+                  </div>
+                </div>
+                <div class="booking-step">
+                  <span class="booking-step-num">02</span>
+                  <div class="booking-step-content">
+                    <h3 class="booking-step-title">The Shoot</h3>
+                    <p class="booking-step-text">A relaxed, focused environment tailored to bring out natural emotion
+                      and aesthetics.</p>
+                  </div>
+                </div>
+                <div class="booking-step">
+                  <span class="booking-step-num">03</span>
+                  <div class="booking-step-content">
+                    <h3 class="booking-step-title">Curated Gallery</h3>
+                    <p class="booking-step-text">Carefully retouched, high-resolution photographs delivered digitally in
+                      1–2 weeks.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="booking-form-col">
+          <div class="booking-form-card">
+            <h2 class="booking-form-heading">Send an Inquiry</h2>
+            <p class="booking-form-subtitle">Fill in the details below and I'll get back to you within 24-48 hours.</p>
+
+            <form class="booking-form" action="#" method="POST" onsubmit="event.preventDefault();">
+              <div class="booking-form-row">
+                <div class="booking-field">
+                  <label for="name" class="booking-label">Your Name</label>
+                  <input type="text" id="name" name="name" class="booking-input" placeholder="e.g. Andrea Marković"
+                    required>
+                </div>
+                <div class="booking-field">
+                  <label for="email" class="booking-label">Email Address</label>
+                  <input type="email" id="email" name="email" class="booking-input" placeholder="name@domain.com"
+                    required>
+                </div>
+              </div>
+
+              <div class="booking-form-row">
+                <div class="booking-field">
+                  <label for="session-type" class="booking-label">Session Type</label>
+                  <div class="booking-select-wrap">
+                    <select id="session-type" name="session_type" class="booking-select" required>
+                      <option value="" disabled selected>Select session type</option>
+                      <option value="portraits">Portrait Session</option>
+                      <option value="events">Event / Nightlife Coverage</option>
+                      <option value="products">Product & Commercial</option>
+                      <option value="editorial">Editorial / Artistic Collaboration</option>
+                      <option value="other">Other Inquiry</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="booking-field">
+                  <label for="date" class="booking-label">Preferred Date / Timeline</label>
+                  <input type="text" id="date" name="date" class="booking-input" placeholder="e.g. Mid-October, 2026">
+                </div>
+              </div>
+
+              <div class="booking-field">
+                <label for="message" class="booking-label">Message & Vision</label>
+                <textarea id="message" name="message" class="booking-textarea" rows="5"
+                  placeholder="Tell me about your idea, preferred locations, mood, or any questions you have..."
+                  required></textarea>
+              </div>
+
+              <button type="submit" class="booking-submit-btn">
+                <span>Send Inquiry</span>
+                <span class="booking-btn-arrow">&rarr;</span>
+              </button>
+            </form>
+          </div>
+        </div>
+
       </div>
     </section>
 
   </main>
 
 </body>
+
 </html>

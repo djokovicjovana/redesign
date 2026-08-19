@@ -28,22 +28,182 @@
     </nav>
   </header>
 
-  <main class="about-page-split">
-    
-    <section class="about-left">
-      <div class="about-img-container">
-        <img src="slika.jpg" alt="Jovana Đoković Products">
+  <main class="products-page">
+
+    <section class="products-hero">
+      <h1 class="products-hero-title">Where aesthetics meet function.</h1>
+      <p class="products-hero-sub">Creative product photography built to highlight design, purpose, and quality.</p>
+      <div class="products-divider-wrap">
+        <div class="products-divider"></div>
       </div>
     </section>
 
-    <section class="about-right">
-      <h1 class="about-title">Products</h1>
-      <div class="about-text">
-        <p>Fine art photography prints, limited edition collections, and high-end commercial product photography.</p>
+    <section class="products-showcase-section">
+      <div class="products-showcase-container">
+
+        <div class="products-main-display">
+          <button class="products-nav-arrow prev-arrow" id="prevArrow" aria-label="Previous image">&#8592;</button>
+          
+          <div class="products-main-frame" id="mainFrame">
+            <img id="mainDisplayImg" src="product/photo_2021-01-22_20-21-28.jpg" alt="Product Showcase">
+          </div>
+
+          <button class="products-nav-arrow next-arrow" id="nextArrow" aria-label="Next image">&#8594;</button>
+        </div>
+
+        <div class="products-meta-bar">
+          <span class="products-meta-counter" id="metaCounter">01 / 09</span>
+        </div>
+
+        <div class="products-thumb-strip" id="thumbStrip">
+          <button class="products-thumb-btn active" data-src="product/photo_2021-01-22_20-21-28.jpg" data-index="0" aria-label="Select photo 1">
+            <img src="product/photo_2021-01-22_20-21-28.jpg" alt="Thumbnail 1">
+          </button>
+          <button class="products-thumb-btn" data-src="product/photo_2021-01-22_20-22-17.jpg" data-index="1" aria-label="Select photo 2">
+            <img src="product/photo_2021-01-22_20-22-17.jpg" alt="Thumbnail 2">
+          </button>
+          <button class="products-thumb-btn" data-src="product/photo_2021-01-22_20-22-23.jpg" data-index="2" aria-label="Select photo 3">
+            <img src="product/photo_2021-01-22_20-22-23.jpg" alt="Thumbnail 3">
+          </button>
+          <button class="products-thumb-btn" data-src="product/photo_2021-01-22_20-22-26.jpg" data-index="3" aria-label="Select photo 4">
+            <img src="product/photo_2021-01-22_20-22-26.jpg" alt="Thumbnail 4">
+          </button>
+          <button class="products-thumb-btn" data-src="product/photo_2021-01-22_20-22-29.jpg" data-index="4" aria-label="Select photo 5">
+            <img src="product/photo_2021-01-22_20-22-29.jpg" alt="Thumbnail 5">
+          </button>
+          <button class="products-thumb-btn" data-src="product/photo_2021-02-05_18-47-20.jpg" data-index="5" aria-label="Select photo 6">
+            <img src="product/photo_2021-02-05_18-47-20.jpg" alt="Thumbnail 6">
+          </button>
+          <button class="products-thumb-btn" data-src="product/photo_2021-02-05_18-47-22.jpg" data-index="6" aria-label="Select photo 7">
+            <img src="product/photo_2021-02-05_18-47-22.jpg" alt="Thumbnail 7">
+          </button>
+          <button class="products-thumb-btn" data-src="product/photo_2021-02-05_18-47-24.jpg" data-index="7" aria-label="Select photo 8">
+            <img src="product/photo_2021-02-05_18-47-24.jpg" alt="Thumbnail 8">
+          </button>
+          <button class="products-thumb-btn" data-src="product/photo_2021-02-05_18-47-26 (2).jpg" data-index="8" aria-label="Select photo 9">
+            <img src="product/photo_2021-02-05_18-47-26 (2).jpg" alt="Thumbnail 9">
+          </button>
+        </div>
+
       </div>
     </section>
 
   </main>
+
+  <div class="products-lightbox" id="productsLightbox" aria-hidden="true">
+    <button class="products-lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+    <div class="products-lightbox-content">
+      <img id="lightboxImg" src="" alt="Expanded Product Photo">
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var mainImg = document.getElementById("mainDisplayImg");
+      var mainFrame = document.getElementById("mainFrame");
+      var thumbBtns = document.querySelectorAll(".products-thumb-btn");
+      var counter = document.getElementById("metaCounter");
+      var prevBtn = document.getElementById("prevArrow");
+      var nextBtn = document.getElementById("nextArrow");
+      var lightbox = document.getElementById("productsLightbox");
+      var lightboxImg = document.getElementById("lightboxImg");
+      var closeBtn = document.getElementById("lightboxClose");
+      var currentIndex = 0;
+      var total = thumbBtns.length;
+
+      function formatNumber(num) {
+        return num < 10 ? "0" + num : num;
+      }
+
+      function updateActiveImage(index) {
+        if (index < 0) {
+          currentIndex = total - 1;
+        } else if (index >= total) {
+          currentIndex = 0;
+        } else {
+          currentIndex = index;
+        }
+
+        var activeBtn = thumbBtns[currentIndex];
+        var newSrc = activeBtn.getAttribute("data-src");
+
+        mainImg.style.opacity = "0";
+        setTimeout(function () {
+          mainImg.src = newSrc;
+          mainImg.style.opacity = "1";
+        }, 180);
+
+        thumbBtns.forEach(function (btn, i) {
+          if (i === currentIndex) {
+            btn.classList.add("active");
+            btn.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "center" });
+          } else {
+            btn.classList.remove("active");
+          }
+        });
+
+        if (counter) {
+          counter.textContent = formatNumber(currentIndex + 1) + " / " + formatNumber(total);
+        }
+      }
+
+      thumbBtns.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var idx = parseInt(this.getAttribute("data-index"), 10);
+          updateActiveImage(idx);
+        });
+      });
+
+      if (prevBtn) {
+        prevBtn.addEventListener("click", function () {
+          updateActiveImage(currentIndex - 1);
+        });
+      }
+
+      if (nextBtn) {
+        nextBtn.addEventListener("click", function () {
+          updateActiveImage(currentIndex + 1);
+        });
+      }
+
+      document.addEventListener("keydown", function (e) {
+        if (lightbox && lightbox.classList.contains("active")) {
+          if (e.key === "Escape") closeLightbox();
+          return;
+        }
+        if (e.key === "ArrowLeft") {
+          updateActiveImage(currentIndex - 1);
+        } else if (e.key === "ArrowRight") {
+          updateActiveImage(currentIndex + 1);
+        }
+      });
+
+      if (mainFrame && lightbox && lightboxImg) {
+        mainFrame.addEventListener("click", function () {
+          lightboxImg.src = mainImg.src;
+          lightbox.classList.add("active");
+          lightbox.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+        });
+      }
+
+      function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.classList.remove("active");
+        lightbox.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      if (closeBtn) closeBtn.addEventListener("click", closeLightbox);
+      if (lightbox) {
+        lightbox.addEventListener("click", function (e) {
+          if (e.target === lightbox || e.target.classList.contains("products-lightbox-content")) {
+            closeLightbox();
+          }
+        });
+      }
+    });
+  </script>
 
 </body>
 </html>
