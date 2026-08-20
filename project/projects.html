@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="sr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projects - Jovana Đoković</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="scrollable">
 
   <header class="inner-header">
@@ -28,22 +32,181 @@
     </nav>
   </header>
 
-  <main class="about-page-split">
-    
-    <section class="about-left">
-      <div class="about-img-container">
-        <img src="slika.jpg" alt="Jovana Đoković Projects">
+  <main class="projects-page">
+
+    <section class="projects-hero">
+      <h1 class="projects-hero-title">Selected Projects.</h1>
+      <p class="projects-hero-sub">Photographs made from instinct, memory, and everything that stays with us.</p>
+      <div class="projects-divider-wrap">
+        <div class="projects-divider"></div>
       </div>
     </section>
 
-    <section class="about-right">
-      <h1 class="about-title">Projects</h1>
-      <div class="about-text">
-        <p>Conceptual series, creative visual narratives, and thematic photo essays pursuing artistic depth and cinematic imagery.</p>
+    <section class="projects-list-section">
+      <div class="projects-list-container">
+
+        <a href="terminology.html" class="project-item">
+          <div class="project-thumb-container">
+            <img src="projects/terminology_naslovna.jpg" alt="Terminology of feelings">
+          </div>
+          <div class="project-content">
+            <span class="project-meta">01 &bull; Visual Narrative &bull; 2023</span>
+            <h2 class="project-title">Terminology of feelings</h2>
+            <div class="project-action">
+              <span>View Book & Series</span>
+              <span class="project-arrow">&rarr;</span>
+            </div>
+          </div>
+        </a>
+
+        <article class="project-item" data-project="1">
+          <div class="project-thumb-container">
+            <img src="projects/anemoia_naslovna.jpg" alt="Anemoia">
+          </div>
+          <div class="project-content">
+            <span class="project-meta">02 &bull; Debut Solo Exhibition &bull; 2022</span>
+            <h2 class="project-title">Anemoia</h2>
+            <div class="project-action">
+              <span>View Series</span>
+              <span class="project-arrow">&rarr;</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-item" data-project="2">
+          <div class="project-thumb-container">
+            <img src="projects/Spa_naslovna.jpg" alt="Natural spa and resort Mataruška Banja">
+          </div>
+          <div class="project-content">
+            <span class="project-meta">03 &bull; Architectural & Cultural Essay &bull; 2022</span>
+            <h2 class="project-title">Natural spa and resort Mataruška Banja</h2>
+            <div class="project-action">
+              <span>View Series</span>
+              <span class="project-arrow">&rarr;</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-item" data-project="3">
+          <div class="project-thumb-container">
+            <img src="projects/anja_naslovna.jpg" alt="Anja">
+          </div>
+          <div class="project-content">
+            <span class="project-meta">04 &bull; Fine Art Archive &bull; 2021</span>
+            <h2 class="project-title">Anja</h2>
+            <div class="project-action">
+              <span>View Series</span>
+              <span class="project-arrow">&rarr;</span>
+            </div>
+          </div>
+        </article>
+
       </div>
     </section>
 
   </main>
 
+  <div id="projectModal" class="project-modal" aria-hidden="true">
+    <div class="project-modal-backdrop"></div>
+    <div class="project-modal-dialog">
+      <button type="button" class="project-modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
+      <div class="project-modal-body">
+        <div class="project-modal-media">
+          <img id="modalImg" src="" alt="">
+        </div>
+        <div class="project-modal-info">
+          <span id="modalMeta" class="project-modal-meta"></span>
+          <h3 id="modalTitle" class="project-modal-title"></h3>
+          <p id="modalDesc" class="project-modal-desc"></p>
+          <div class="project-modal-tags" id="modalTags"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const projectData = [
+      {
+        title: "Terminology of feelings",
+        meta: "01 \u2022 Visual Narrative \u2022 2023",
+        img: "projects/terminology_naslovna.jpg",
+        desc: "A cinematic exploration of connection, nostalgia, and the unspoken language between two souls surrounded by nature's warm autumn solitude.",
+        tags: ["Editorial", "Natural Light", "Concept Art"]
+      },
+      {
+        title: "Anemoia",
+        meta: "02 \u2022 Debut Solo Exhibition \u2022 2022",
+        img: "projects/anemoia_naslovna.jpg",
+        desc: "A visual contemplation on nostalgia for a time never known. Exploring intentional blur, raw emotional resonance, and the quiet dialogue between subject and light.",
+        tags: ["Solo Exhibition", "Thrill Bar Gallery", "Monochrome & Neon"]
+      },
+      {
+        title: "Natural spa and resort Mataruska Banja",
+        meta: "03 \u2022 Architectural & Cultural Essay \u2022 2022",
+        img: "projects/Spa_naslovna.jpg",
+        desc: "Documenting the historical soul, architecture, and enduring serenity of Mataru\u0161ka Banja, preserving its timeless spirit in delicate tones.",
+        tags: ["Cultural Heritage", "Architecture", "Photo Essay"]
+      },
+      {
+        title: "Anja",
+        meta: "04 \u2022 Fine Art Archive \u2022 2021",
+        img: "projects/anja_naslovna.jpg",
+        desc: "An experimental darkroom documentation merging film photography, archival documents, and deeply intimate portraiture.",
+        tags: ["Darkroom", "Experimental", "Archival"]
+      }
+    ];
+
+    const modal = document.getElementById('projectModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalMeta = document.getElementById('modalMeta');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalTags = document.getElementById('modalTags');
+    const closeBtn = document.getElementById('modalCloseBtn');
+    const backdrop = document.querySelector('.project-modal-backdrop');
+
+    function openModal(index) {
+      const data = projectData[index];
+      if (!data) return;
+      modalImg.src = data.img;
+      modalImg.alt = data.title;
+      modalTitle.textContent = data.title;
+      modalMeta.textContent = data.meta;
+      modalDesc.textContent = data.desc;
+      modalTags.innerHTML = '';
+      data.tags.forEach(tag => {
+        const span = document.createElement('span');
+        span.className = 'project-modal-tag';
+        span.textContent = tag;
+        modalTags.appendChild(span);
+      });
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+
+    document.querySelectorAll('.project-item').forEach(item => {
+      item.addEventListener('click', () => {
+        const index = parseInt(item.getAttribute('data-project'), 10);
+        openModal(index);
+      });
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  </script>
 </body>
+
 </html>

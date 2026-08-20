@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terminology of feelings - Projects - Jovana Đoković</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="scrollable">
+
+  <header class="inner-header">
+    <div class="inner-branding">
+      <a href="index.html" class="inner-title">Jovana Đoković</a>
+      <span class="inner-subtitle">Photographer</span>
+    </div>
+    <nav class="inner-nav">
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="portraits.html">Portraits</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="booking.html">Booking</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="terminology-page">
+    <div class="terminology-container">
+
+      <div class="terminology-back-nav">
+        <a href="projects.html" class="terminology-back-link">&larr; Back to Projects</a>
+      </div>
+
+      <section class="terminology-intro-section">
+        <h1 class="terminology-main-title">Terminology of feelings</h1>
+
+        <div class="terminology-text-block">
+          <p>
+            In this project, I explore the rich landscape of human emotions by uncovering new words for feelings we have
+            all experienced but often struggled to name. This visual dictionary features 15 carefully chosen terms which
+            are probably the most common.
+          </p>
+          <p>
+            Presented in the form of a nostalgic and engaging book, this work invites you to relive these emotions,
+            creating a space for reflection and connection. Each page serves as a portal to both familiar and uncharted
+            feelings, allowing us to articulate our experiences in ways we may not have considered before.
+          </p>
+          <p>
+            I believe that emotions, whether positive or negative, are the driving force behind our existence. They
+            remind us of our humanity and the vibrant tapestry of life that surrounds us. By giving voice to these
+            feelings, this project aims to foster a deeper understanding of ourselves and each other, celebrating the
+            complexity of our emotional experiences as we navigate the journey of life.
+          </p>
+        </div>
+      </section>
+
+      <section class="terminology-book-section">
+        <div class="book-viewer-wrapper">
+          <button type="button" class="book-nav-btn book-prev-btn" id="bookPrevBtn"
+            aria-label="Previous Page">&larr;</button>
+
+          <div class="book-display" id="bookDisplay">
+            <div class="book-spread-card">
+              <img id="currentBookImg" src="projects/terminology/1.jpg" alt="Terminology of feelings - Spread">
+            </div>
+          </div>
+
+          <button type="button" class="book-nav-btn book-next-btn" id="bookNextBtn"
+            aria-label="Next Page">&rarr;</button>
+        </div>
+
+        <div class="book-meta-bar">
+          <span class="book-counter" id="bookCounter">3 / 17</span>
+          <span class="book-caption" id="bookCaption">Spread 01 — Angstalgia</span>
+        </div>
+
+        <div class="terminology-order-wrap">
+          <a href="booking.html" class="terminology-order-link">Order here</a>
+        </div>
+      </section>
+
+      <section class="terminology-spreads-section">
+        <h2 class="terminology-gallery-heading">All Book Spreads</h2>
+        <div class="terminology-thumbnails-grid" id="thumbnailsGrid">
+        </div>
+      </section>
+
+      <div class="terminology-footer-nav">
+        <a href="projects.html" class="terminology-back-link">&larr; Back to Projects</a>
+      </div>
+
+    </div>
+  </main>
+
+  <script>
+    const bookPages = [
+      { src: "projects/terminology/01.jpg", caption: "Cover" },
+      { src: "projects/terminology/02.jpg", caption: "Title Page — Jovana Đoković" },
+      { src: "projects/terminology/1.jpg", caption: "Spread 01 — Angstalgia" },
+      { src: "projects/terminology/2.jpg", caption: "Spread 02 — Anemoia" },
+      { src: "projects/terminology/3.jpg", caption: "Spread 03" },
+      { src: "projects/terminology/4.jpg", caption: "Spread 04" },
+      { src: "projects/terminology/5.jpg", caption: "Spread 05" },
+      { src: "projects/terminology/6.jpg", caption: "Spread 06" },
+      { src: "projects/terminology/7.jpg", caption: "Spread 07" },
+      { src: "projects/terminology/8-1.jpg", caption: "Spread 08" },
+      { src: "projects/terminology/9.jpg", caption: "Spread 09" },
+      { src: "projects/terminology/10.jpg", caption: "Spread 10" },
+      { src: "projects/terminology/11.jpg", caption: "Spread 11" },
+      { src: "projects/terminology/12.jpg", caption: "Spread 12" },
+      { src: "projects/terminology/13.jpg", caption: "Spread 13" },
+      { src: "projects/terminology/14.jpg", caption: "Spread 14" },
+      { src: "projects/terminology/15.jpg", caption: "Spread 15" }
+    ];
+
+    let currentIndex = 2;
+    const currentImg = document.getElementById('currentBookImg');
+    const bookCounter = document.getElementById('bookCounter');
+    const bookCaption = document.getElementById('bookCaption');
+    const prevBtn = document.getElementById('bookPrevBtn');
+    const nextBtn = document.getElementById('bookNextBtn');
+    const thumbnailsGrid = document.getElementById('thumbnailsGrid');
+
+    function updateSpread(index) {
+      if (index < 0) index = 0;
+      if (index >= bookPages.length) index = bookPages.length - 1;
+      currentIndex = index;
+
+      currentImg.style.opacity = '0';
+      setTimeout(() => {
+        currentImg.src = bookPages[currentIndex].src;
+        currentImg.alt = bookPages[currentIndex].caption;
+        currentImg.style.opacity = '1';
+      }, 150);
+
+      bookCounter.textContent = (currentIndex + 1) + ' / ' + bookPages.length;
+      bookCaption.textContent = bookPages[currentIndex].caption;
+
+      prevBtn.disabled = currentIndex === 0;
+      nextBtn.disabled = currentIndex === bookPages.length - 1;
+
+      document.querySelectorAll('.book-thumb-item').forEach((thumb, idx) => {
+        if (idx === currentIndex) {
+          thumb.classList.add('active');
+        } else {
+          thumb.classList.remove('active');
+        }
+      });
+    }
+
+    bookPages.forEach((page, idx) => {
+      const item = document.createElement('div');
+      item.className = 'book-thumb-item' + (idx === currentIndex ? ' active' : '');
+      item.innerHTML = '<img src="' + page.src + '" alt="' + page.caption + '"><span class="thumb-label">' + (idx + 1) + '</span>';
+      item.addEventListener('click', () => {
+        updateSpread(idx);
+        document.getElementById('bookDisplay').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      });
+      thumbnailsGrid.appendChild(item);
+    });
+
+    prevBtn.addEventListener('click', () => {
+      if (currentIndex > 0) updateSpread(currentIndex - 1);
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (currentIndex < bookPages.length - 1) updateSpread(currentIndex + 1);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft' && currentIndex > 0) {
+        updateSpread(currentIndex - 1);
+      } else if (e.key === 'ArrowRight' && currentIndex < bookPages.length - 1) {
+        updateSpread(currentIndex + 1);
+      }
+    });
+
+    updateSpread(currentIndex);
+  </script>
+</body>
+
+</html>
