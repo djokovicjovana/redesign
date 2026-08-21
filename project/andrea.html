@@ -92,6 +92,79 @@
     </div>
   </main>
 
+  <div id="portraitLightbox" class="anja-lightbox" aria-hidden="true">
+    <div class="anja-lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="anja-lightbox-dialog">
+      <button type="button" class="anja-lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
+      <button type="button" class="anja-lightbox-nav anja-lightbox-prev" id="lightboxPrev" aria-label="Previous image">&larr;</button>
+      <div class="anja-lightbox-media">
+        <img id="lightboxImg" src="" alt="Enlarged portrait">
+      </div>
+      <button type="button" class="anja-lightbox-nav anja-lightbox-next" id="lightboxNext" aria-label="Next image">&rarr;</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const imgElements = Array.from(document.querySelectorAll('.portrait-detail-img-container img, .portrait-story-img-wrap img'));
+      const images = imgElements.map(img => ({ src: img.getAttribute('src'), alt: img.getAttribute('alt') || 'Andrea' }));
+
+      const lightbox = document.getElementById('portraitLightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxBackdrop = document.getElementById('lightboxBackdrop');
+      const lightboxClose = document.getElementById('lightboxClose');
+      const lightboxPrev = document.getElementById('lightboxPrev');
+      const lightboxNext = document.getElementById('lightboxNext');
+
+      let currentIndex = 0;
+
+      function updateLightbox(index) {
+        if (index < 0) {
+          currentIndex = images.length - 1;
+        } else if (index >= images.length) {
+          currentIndex = 0;
+        } else {
+          currentIndex = index;
+        }
+        lightboxImg.src = images[currentIndex].src;
+        lightboxImg.alt = images[currentIndex].alt;
+      }
+
+      function openLightbox(index) {
+        updateLightbox(index);
+        lightbox.classList.add('active');
+        lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        lightbox.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+      }
+
+      imgElements.forEach((img, idx) => {
+        const parent = img.parentElement;
+        if (parent) {
+          parent.addEventListener('click', () => openLightbox(idx));
+        }
+      });
+
+      if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+      if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
+      if (lightboxPrev) lightboxPrev.addEventListener('click', () => updateLightbox(currentIndex - 1));
+      if (lightboxNext) lightboxNext.addEventListener('click', () => updateLightbox(currentIndex + 1));
+
+      document.addEventListener('keydown', (e) => {
+        if (lightbox && lightbox.classList.contains('active')) {
+          if (e.key === 'Escape') closeLightbox();
+          if (e.key === 'ArrowLeft') updateLightbox(currentIndex - 1);
+          if (e.key === 'ArrowRight') updateLightbox(currentIndex + 1);
+        }
+      });
+    });
+  </script>
+
 </body>
 
 </html>

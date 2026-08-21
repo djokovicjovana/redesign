@@ -653,6 +653,7 @@ body.scrollable {
   max-width: 420px;
   aspect-ratio: 3 / 4;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .portrait-detail-img-container img {
@@ -660,6 +661,12 @@ body.scrollable {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.portrait-detail-img-container:hover img {
+  transform: scale(1.02);
+  filter: brightness(1.04);
 }
 
 .portrait-detail-info {
@@ -744,6 +751,7 @@ body.scrollable {
   overflow: hidden;
   display: flex;
   justify-content: center;
+  cursor: pointer;
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 
@@ -756,6 +764,7 @@ body.scrollable {
 }
 
 .portrait-story-img-wrap:hover img {
+  transform: scale(1.02);
   filter: brightness(1.05);
 }
 
