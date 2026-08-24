@@ -4,9 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anemoia - Projects - Jovana Đoković</title>
+  <title>Anemoia — Projects — Jovana Đoković</title>
+  <meta name="description" content="Anemoia — a video and narrative art project exploring the longing for what could have been and childhood dreams of dance by Jovana Đoković.">
+  <meta property="og:title" content="Anemoia — Projects — Jovana Đoković">
+  <meta property="og:description" content="Video & Narrative. A personal exploration of childhood dance dreams and nostalgia.">
+  <meta property="og:image" content="projects/anemoia_naslovna.jpg">
+  <meta property="og:type" content="video.other">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
     rel="stylesheet">
@@ -30,7 +36,29 @@
         <li><a href="booking.html">Booking</a></li>
       </ul>
     </nav>
+    <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
   </header>
+
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-backdrop"></div>
+    <div class="mobile-drawer-content">
+      <ul class="mobile-drawer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="portraits.html">Portraits</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="booking.html">Booking</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <a href="mailto:djokovicjovana77@gmail.com" class="mobile-drawer-email">djokovicjovana77@gmail.com</a>
+        <a href="https://instagram.com/anemoia.7" target="_blank" rel="noopener noreferrer" class="mobile-drawer-social">Instagram @anemoia.7</a>
+      </div>
+    </div>
+  </div>
 
   <main class="anemoia-page">
     <div class="anemoia-container">
@@ -39,11 +67,11 @@
         <a href="projects.html" class="anemoia-back-link">&larr; Back to Projects</a>
       </div>
 
-      <section class="anemoia-intro-section">
+      <section class="anemoia-intro-section reveal-on-scroll">
         <h1 class="anemoia-main-title">Anemoia</h1>
       </section>
 
-      <section class="anemoia-video-section">
+      <section class="anemoia-video-section reveal-on-scroll">
         <div class="anemoia-video-wrapper">
           <video class="anemoia-video-player" controls playsinline preload="metadata" poster="projects/anemoia_naslovna.jpg">
             <source src="projects/anemoia/final.mp4" type="video/mp4">
@@ -52,7 +80,7 @@
         </div>
       </section>
 
-      <section class="anemoia-text-section">
+      <section class="anemoia-text-section reveal-on-scroll">
         <div class="anemoia-text-block">
           <p>
             Growing up, I was immersed in the world of dance – each class, each performance igniting a passion that seemed
@@ -81,6 +109,7 @@
     </div>
   </main>
 
+  <script src="site.js"></script>
 </body>
 
 </html>

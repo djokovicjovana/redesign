@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portraits - Jovana Đoković</title>
+  <title>Portraits — Jovana Đoković</title>
+  <meta name="description" content="Intimate and atmospheric portrait photography series exploring emotion, honesty, and identity by Jovana Đoković.">
+  <meta property="og:title" content="Portraits — Jovana Đoković">
+  <meta property="og:description" content="The Shape of Emotion. Blurry lines. Honest faces. Portraits that feel like memories.">
+  <meta property="og:image" content="images/nikola.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
@@ -26,11 +33,33 @@
         <li><a href="booking.html">Booking</a></li>
       </ul>
     </nav>
+    <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
   </header>
+
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-backdrop"></div>
+    <div class="mobile-drawer-content">
+      <ul class="mobile-drawer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="portraits.html" class="active">Portraits</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="booking.html">Booking</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <a href="mailto:djokovicjovana77@gmail.com" class="mobile-drawer-email">djokovicjovana77@gmail.com</a>
+        <a href="https://instagram.com/anemoia.7" target="_blank" rel="noopener noreferrer" class="mobile-drawer-social">Instagram @anemoia.7</a>
+      </div>
+    </div>
+  </div>
 
   <main class="portraits-page">
 
-    <section class="portraits-hero">
+    <section class="portraits-hero reveal-on-scroll">
       <h1 class="portraits-hero-title">The Shape of Emotion.</h1>
       <p class="portraits-hero-sub">Blurry lines. Honest faces. Portraits that feel like memories.</p>
       <div class="portraits-divider-wrap">
@@ -41,28 +70,28 @@
     <section class="portraits-grid-section">
       <div class="portraits-grid">
 
-        <a href="nikola.html" class="portrait-card-link">
+        <a href="nikola.html" class="portrait-card-link reveal-on-scroll">
           <div class="portrait-card">
             <div class="portrait-img-wrap">
-              <img src="images/nikola.jpg" alt="Nikola">
+              <img src="images/nikola.jpg" alt="Portrait story: Nikola by Jovana Đoković">
             </div>
             <div class="portrait-name">Nikola</div>
           </div>
         </a>
 
-        <a href="andrea.html" class="portrait-card-link">
+        <a href="andrea.html" class="portrait-card-link reveal-on-scroll">
           <div class="portrait-card">
             <div class="portrait-img-wrap">
-              <img src="images/andrea.jpg" alt="Andrea">
+              <img src="images/andrea.jpg" alt="Portrait story: Andrea by Jovana Đoković">
             </div>
             <div class="portrait-name">Andrea</div>
           </div>
         </a>
 
-        <a href="strahinja.html" class="portrait-card-link">
+        <a href="strahinja.html" class="portrait-card-link reveal-on-scroll">
           <div class="portrait-card">
             <div class="portrait-img-wrap">
-              <img src="images/strahinja.jpg" alt="Strahinja">
+              <img src="images/strahinja.jpg" alt="Portrait story: Strahinja by Jovana Đoković">
             </div>
             <div class="portrait-name">Strahinja</div>
           </div>
@@ -73,5 +102,6 @@
 
   </main>
 
+  <script src="site.js"></script>
 </body>
 </html>

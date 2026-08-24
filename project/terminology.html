@@ -4,9 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Terminology of feelings - Projects - Jovana Đoković</title>
+  <title>Terminology of feelings — Projects — Jovana Đoković</title>
+  <meta name="description" content="Terminology of feelings — a nostalgic visual dictionary exploring the rich landscape of human emotions by Jovana Đoković.">
+  <meta property="og:title" content="Terminology of feelings — Projects — Jovana Đoković">
+  <meta property="og:description" content="Visual Narrative & Art Book uncovering words for emotions we all feel.">
+  <meta property="og:image" content="projects/terminology_naslovna.jpg">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
     rel="stylesheet">
@@ -30,7 +36,29 @@
         <li><a href="booking.html">Booking</a></li>
       </ul>
     </nav>
+    <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
   </header>
+
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-backdrop"></div>
+    <div class="mobile-drawer-content">
+      <ul class="mobile-drawer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="portraits.html">Portraits</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="booking.html">Booking</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <a href="mailto:djokovicjovana77@gmail.com" class="mobile-drawer-email">djokovicjovana77@gmail.com</a>
+        <a href="https://instagram.com/anemoia.7" target="_blank" rel="noopener noreferrer" class="mobile-drawer-social">Instagram @anemoia.7</a>
+      </div>
+    </div>
+  </div>
 
   <main class="terminology-page">
     <div class="terminology-container">
@@ -39,7 +67,7 @@
         <a href="projects.html" class="terminology-back-link">&larr; Back to Projects</a>
       </div>
 
-      <section class="terminology-intro-section">
+      <section class="terminology-intro-section reveal-on-scroll">
         <h1 class="terminology-main-title">Terminology of feelings</h1>
 
         <div class="terminology-text-block">
@@ -62,14 +90,14 @@
         </div>
       </section>
 
-      <section class="terminology-book-section">
+      <section class="terminology-book-section reveal-on-scroll">
         <div class="book-viewer-wrapper">
           <button type="button" class="book-nav-btn book-prev-btn" id="bookPrevBtn"
             aria-label="Previous Page">&larr;</button>
 
           <div class="book-display" id="bookDisplay">
-            <div class="book-spread-card">
-              <img id="currentBookImg" src="projects/terminology/1.jpg" alt="Terminology of feelings - Spread">
+            <div class="book-spread-card" id="bookSpreadCard">
+              <img id="currentBookImg" src="projects/terminology/1.jpg" alt="Terminology of feelings - Spread 01">
             </div>
           </div>
 
@@ -83,11 +111,11 @@
         </div>
 
         <div class="terminology-order-wrap">
-          <a href="booking.html" class="terminology-order-link">Order here</a>
+          <a href="booking.html?type=book" class="terminology-order-link">Buy a Book &rarr;</a>
         </div>
       </section>
 
-      <section class="terminology-spreads-section">
+      <section class="terminology-spreads-section reveal-on-scroll">
         <h2 class="terminology-gallery-heading">All Book Spreads</h2>
         <div class="terminology-thumbnails-grid" id="thumbnailsGrid">
         </div>
@@ -100,156 +128,126 @@
     </div>
   </main>
 
-  <div id="terminologyLightbox" class="anja-lightbox" aria-hidden="true">
-    <div class="anja-lightbox-backdrop" id="lightboxBackdrop"></div>
-    <div class="anja-lightbox-dialog">
-      <button type="button" class="anja-lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
-      <button type="button" class="anja-lightbox-nav anja-lightbox-prev" id="lightboxPrev" aria-label="Previous image">&larr;</button>
-      <div class="anja-lightbox-media">
-        <img id="lightboxImg" src="" alt="Enlarged view">
-      </div>
-      <button type="button" class="anja-lightbox-nav anja-lightbox-next" id="lightboxNext" aria-label="Next image">&rarr;</button>
-    </div>
-  </div>
-
+  <script src="site.js"></script>
+  <script src="lightbox.js"></script>
   <script>
-    const bookPages = [
-      { src: "projects/terminology/01.jpg", caption: "Cover" },
-      { src: "projects/terminology/02.jpg", caption: "Title Page — Jovana Đoković" },
-      { src: "projects/terminology/1.jpg", caption: "Spread 01 — Angstalgia" },
-      { src: "projects/terminology/2.jpg", caption: "Spread 02 — Anemoia" },
-      { src: "projects/terminology/3.jpg", caption: "Spread 03" },
-      { src: "projects/terminology/4.jpg", caption: "Spread 04" },
-      { src: "projects/terminology/5.jpg", caption: "Spread 05" },
-      { src: "projects/terminology/6.jpg", caption: "Spread 06" },
-      { src: "projects/terminology/7.jpg", caption: "Spread 07" },
-      { src: "projects/terminology/8-1.jpg", caption: "Spread 08" },
-      { src: "projects/terminology/9.jpg", caption: "Spread 09" },
-      { src: "projects/terminology/10.jpg", caption: "Spread 10" },
-      { src: "projects/terminology/11.jpg", caption: "Spread 11" },
-      { src: "projects/terminology/12.jpg", caption: "Spread 12" },
-      { src: "projects/terminology/13.jpg", caption: "Spread 13" },
-      { src: "projects/terminology/14.jpg", caption: "Spread 14" },
-      { src: "projects/terminology/15.jpg", caption: "Spread 15" }
-    ];
+    document.addEventListener("DOMContentLoaded", function () {
+      var bookPages = [
+        { src: "projects/terminology/01.jpg", caption: "Cover" },
+        { src: "projects/terminology/02.jpg", caption: "Title Page — Jovana Đoković" },
+        { src: "projects/terminology/1.jpg", caption: "Spread 01 — Angstalgia" },
+        { src: "projects/terminology/2.jpg", caption: "Spread 02 — Anemoia" },
+        { src: "projects/terminology/3.jpg", caption: "Spread 03" },
+        { src: "projects/terminology/4.jpg", caption: "Spread 04" },
+        { src: "projects/terminology/5.jpg", caption: "Spread 05" },
+        { src: "projects/terminology/6.jpg", caption: "Spread 06" },
+        { src: "projects/terminology/7.jpg", caption: "Spread 07" },
+        { src: "projects/terminology/8-1.jpg", caption: "Spread 08" },
+        { src: "projects/terminology/9.jpg", caption: "Spread 09" },
+        { src: "projects/terminology/10.jpg", caption: "Spread 10" },
+        { src: "projects/terminology/11.jpg", caption: "Spread 11" },
+        { src: "projects/terminology/12.jpg", caption: "Spread 12" },
+        { src: "projects/terminology/13.jpg", caption: "Spread 13" },
+        { src: "projects/terminology/14.jpg", caption: "Spread 14" },
+        { src: "projects/terminology/15.jpg", caption: "Spread 15" }
+      ];
 
-    let currentIndex = 2;
-    const currentImg = document.getElementById('currentBookImg');
-    const bookDisplay = document.getElementById('bookDisplay');
-    const bookCounter = document.getElementById('bookCounter');
-    const bookCaption = document.getElementById('bookCaption');
-    const prevBtn = document.getElementById('bookPrevBtn');
-    const nextBtn = document.getElementById('bookNextBtn');
-    const thumbnailsGrid = document.getElementById('thumbnailsGrid');
+      var currentIndex = 2;
+      var currentImg = document.getElementById("currentBookImg");
+      var bookCounter = document.getElementById("bookCounter");
+      var bookCaption = document.getElementById("bookCaption");
+      var prevBtn = document.getElementById("bookPrevBtn");
+      var nextBtn = document.getElementById("bookNextBtn");
+      var thumbnailsGrid = document.getElementById("thumbnailsGrid");
+      var bookCard = document.getElementById("bookSpreadCard");
 
-    const lightbox = document.getElementById('terminologyLightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxBackdrop = document.getElementById('lightboxBackdrop');
-    const lightboxClose = document.getElementById('lightboxClose');
-    const lightboxPrev = document.getElementById('lightboxPrev');
-    const lightboxNext = document.getElementById('lightboxNext');
+      var lightboxInstance = initLightbox(bookPages);
 
-    function updateSpread(index) {
-      if (index < 0) index = 0;
-      if (index >= bookPages.length) index = bookPages.length - 1;
-      currentIndex = index;
+      function updateSpread(index) {
+        if (index < 0) index = 0;
+        if (index >= bookPages.length) index = bookPages.length - 1;
+        currentIndex = index;
 
-      currentImg.style.opacity = '0';
-      setTimeout(() => {
-        currentImg.src = bookPages[currentIndex].src;
-        currentImg.alt = bookPages[currentIndex].caption;
-        currentImg.style.opacity = '1';
-      }, 150);
+        currentImg.style.opacity = "0";
+        setTimeout(function () {
+          currentImg.src = bookPages[currentIndex].src;
+          currentImg.alt = bookPages[currentIndex].caption;
+          currentImg.style.opacity = "1";
+        }, 150);
 
-      bookCounter.textContent = (currentIndex + 1) + ' / ' + bookPages.length;
-      bookCaption.textContent = bookPages[currentIndex].caption;
+        bookCounter.textContent = (currentIndex + 1) + " / " + bookPages.length;
+        bookCaption.textContent = bookPages[currentIndex].caption;
 
-      prevBtn.disabled = currentIndex === 0;
-      nextBtn.disabled = currentIndex === bookPages.length - 1;
+        prevBtn.disabled = currentIndex === 0;
+        nextBtn.disabled = currentIndex === bookPages.length - 1;
 
-      document.querySelectorAll('.book-thumb-item').forEach((thumb, idx) => {
-        if (idx === currentIndex) {
-          thumb.classList.add('active');
-        } else {
-          thumb.classList.remove('active');
-        }
-      });
-    }
-
-    function openLightbox(index) {
-      currentIndex = index;
-      updateSpread(currentIndex);
-      lightboxImg.src = bookPages[currentIndex].src;
-      lightboxImg.alt = bookPages[currentIndex].caption;
-      lightbox.classList.add('active');
-      lightbox.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-      lightbox.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    function showPrevLightbox() {
-      currentIndex = (currentIndex - 1 + bookPages.length) % bookPages.length;
-      updateSpread(currentIndex);
-      lightboxImg.src = bookPages[currentIndex].src;
-      lightboxImg.alt = bookPages[currentIndex].caption;
-    }
-
-    function showNextLightbox() {
-      currentIndex = (currentIndex + 1) % bookPages.length;
-      updateSpread(currentIndex);
-      lightboxImg.src = bookPages[currentIndex].src;
-      lightboxImg.alt = bookPages[currentIndex].caption;
-    }
-
-    bookPages.forEach((page, idx) => {
-      const item = document.createElement('div');
-      item.className = 'book-thumb-item' + (idx === currentIndex ? ' active' : '');
-      item.innerHTML = '<img src="' + page.src + '" alt="' + page.caption + '"><span class="thumb-label">' + (idx + 1) + '</span>';
-      item.addEventListener('click', () => {
-        updateSpread(idx);
-        document.getElementById('bookDisplay').scrollIntoView({ behavior: 'smooth', block: 'center' });
-      });
-      thumbnailsGrid.appendChild(item);
-    });
-
-    currentImg.parentElement.style.cursor = 'pointer';
-    currentImg.parentElement.addEventListener('click', () => {
-      openLightbox(currentIndex);
-    });
-
-    prevBtn.addEventListener('click', () => {
-      if (currentIndex > 0) updateSpread(currentIndex - 1);
-    });
-
-    nextBtn.addEventListener('click', () => {
-      if (currentIndex < bookPages.length - 1) updateSpread(currentIndex + 1);
-    });
-
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightboxBackdrop.addEventListener('click', closeLightbox);
-    lightboxPrev.addEventListener('click', showPrevLightbox);
-    lightboxNext.addEventListener('click', showNextLightbox);
-
-    document.addEventListener('keydown', (e) => {
-      if (lightbox.classList.contains('active')) {
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowLeft') showPrevLightbox();
-        if (e.key === 'ArrowRight') showNextLightbox();
-      } else {
-        if (e.key === 'ArrowLeft' && currentIndex > 0) {
-          updateSpread(currentIndex - 1);
-        } else if (e.key === 'ArrowRight' && currentIndex < bookPages.length - 1) {
-          updateSpread(currentIndex + 1);
-        }
+        document.querySelectorAll(".book-thumb-item").forEach(function (thumb, idx) {
+          if (idx === currentIndex) {
+            thumb.classList.add("active");
+          } else {
+            thumb.classList.remove("active");
+          }
+        });
       }
-    });
 
-    updateSpread(currentIndex);
+      bookPages.forEach(function (page, idx) {
+        var item = document.createElement("div");
+        item.className = "book-thumb-item" + (idx === currentIndex ? " active" : "");
+        item.innerHTML = '<img src="' + page.src + '" alt="' + page.caption + '" loading="lazy"><span class="thumb-label">' + (idx + 1) + '</span>';
+        item.addEventListener("click", function () {
+          updateSpread(idx);
+          document.getElementById("bookDisplay").scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+        thumbnailsGrid.appendChild(item);
+      });
+
+      if (bookCard) {
+        bookCard.style.cursor = "zoom-in";
+        bookCard.addEventListener("click", function () {
+          if (lightboxInstance) lightboxInstance.open(currentIndex);
+        });
+
+        var touchStartX = 0;
+        var touchEndX = 0;
+        bookCard.addEventListener("touchstart", function (e) {
+          if (e.touches && e.touches.length > 0) {
+            touchStartX = e.touches[0].clientX;
+          }
+        }, { passive: true });
+
+        bookCard.addEventListener("touchend", function (e) {
+          if (e.changedTouches && e.changedTouches.length > 0) {
+            touchEndX = e.changedTouches[0].clientX;
+            var dx = touchEndX - touchStartX;
+            if (Math.abs(dx) > 40) {
+              if (dx < 0 && currentIndex < bookPages.length - 1) {
+                updateSpread(currentIndex + 1);
+              } else if (dx > 0 && currentIndex > 0) {
+                updateSpread(currentIndex - 1);
+              }
+            }
+          }
+        }, { passive: true });
+      }
+
+      prevBtn.addEventListener("click", function () {
+        if (currentIndex > 0) updateSpread(currentIndex - 1);
+      });
+
+      nextBtn.addEventListener("click", function () {
+        if (currentIndex < bookPages.length - 1) updateSpread(currentIndex + 1);
+      });
+
+      document.addEventListener("keydown", function (e) {
+        var modalActive = document.querySelector(".global-lightbox.active");
+        if (!modalActive) {
+          if (e.key === "ArrowLeft" && currentIndex > 0) updateSpread(currentIndex - 1);
+          if (e.key === "ArrowRight" && currentIndex < bookPages.length - 1) updateSpread(currentIndex + 1);
+        }
+      });
+
+      updateSpread(currentIndex);
+    });
   </script>
 </body>
 

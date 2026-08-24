@@ -4,9 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Products - Jovana Đoković</title>
+  <title>Products — Jovana Đoković</title>
+  <meta name="description" content="Product and commercial photography shaped by light, shadow, and minimalist aesthetics by Jovana Đoković.">
+  <meta property="og:title" content="Products — Jovana Đoković">
+  <meta property="og:description" content="Where aesthetics meet function. Commercial & product visual identity.">
+  <meta property="og:image" content="product/1.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400&display=swap"
     rel="stylesheet">
@@ -30,14 +36,35 @@
         <li><a href="booking.html">Booking</a></li>
       </ul>
     </nav>
+    <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
   </header>
+
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-backdrop"></div>
+    <div class="mobile-drawer-content">
+      <ul class="mobile-drawer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="portraits.html">Portraits</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="booking.html">Booking</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <a href="mailto:djokovicjovana77@gmail.com" class="mobile-drawer-email">djokovicjovana77@gmail.com</a>
+        <a href="https://instagram.com/anemoia.7" target="_blank" rel="noopener noreferrer" class="mobile-drawer-social">Instagram @anemoia.7</a>
+      </div>
+    </div>
+  </div>
 
   <main class="products-page">
 
-    <section class="products-hero">
+    <section class="products-hero reveal-on-scroll">
       <h1 class="products-hero-title">Where aesthetics meet function.</h1>
-      <p class="products-hero-sub">Product photography shaped by light, shadow, and structure. Designed to elevate the
-        visual identity of the design.</p>
+      <p class="products-hero-sub">Product photography shaped by light, shadow, and structure. Designed to elevate the visual identity of the design.</p>
       <div class="products-divider-wrap">
         <div class="products-divider"></div>
       </div>
@@ -50,7 +77,7 @@
           <button class="products-nav-arrow prev-arrow" id="prevArrow" aria-label="Previous image">&#8592;</button>
 
           <div class="products-main-frame" id="mainFrame">
-            <img id="mainDisplayImg" src="product/1.jpg" alt="Product Showcase">
+            <img id="mainDisplayImg" src="product/1.jpg" alt="Commercial and product photograph by Jovana Đoković">
           </div>
 
           <button class="products-nav-arrow next-arrow" id="nextArrow" aria-label="Next image">&#8594;</button>
@@ -62,37 +89,37 @@
 
         <div class="products-thumb-strip" id="thumbStrip">
           <button class="products-thumb-btn active" data-src="product/1.jpg" data-index="0" aria-label="Select photo 1">
-            <img src="product/1.jpg" alt="Thumbnail 1">
+            <img src="product/1.jpg" alt="Product thumbnail 1">
           </button>
           <button class="products-thumb-btn" data-src="product/2.jpg" data-index="1" aria-label="Select photo 2">
-            <img src="product/2.jpg" alt="Thumbnail 2">
+            <img src="product/2.jpg" alt="Product thumbnail 2">
           </button>
           <button class="products-thumb-btn" data-src="product/3.jpg" data-index="2" aria-label="Select photo 3">
-            <img src="product/3.jpg" alt="Thumbnail 3">
+            <img src="product/3.jpg" alt="Product thumbnail 3">
           </button>
           <button class="products-thumb-btn" data-src="product/4.jpg" data-index="3" aria-label="Select photo 4">
-            <img src="product/4.jpg" alt="Thumbnail 4">
+            <img src="product/4.jpg" alt="Product thumbnail 4">
           </button>
           <button class="products-thumb-btn" data-src="product/5.jpg" data-index="4" aria-label="Select photo 5">
-            <img src="product/5.jpg" alt="Thumbnail 5">
+            <img src="product/5.jpg" alt="Product thumbnail 5">
           </button>
           <button class="products-thumb-btn" data-src="product/6.jpg" data-index="5" aria-label="Select photo 6">
-            <img src="product/6.jpg" alt="Thumbnail 6">
+            <img src="product/6.jpg" alt="Product thumbnail 6">
           </button>
           <button class="products-thumb-btn" data-src="product/7.jpg" data-index="6" aria-label="Select photo 7">
-            <img src="product/7.jpg" alt="Thumbnail 7">
+            <img src="product/7.jpg" alt="Product thumbnail 7">
           </button>
           <button class="products-thumb-btn" data-src="product/8.jpg" data-index="7" aria-label="Select photo 8">
-            <img src="product/8.jpg" alt="Thumbnail 8">
+            <img src="product/8.jpg" alt="Product thumbnail 8">
           </button>
           <button class="products-thumb-btn" data-src="product/9.jpg" data-index="8" aria-label="Select photo 9">
-            <img src="product/9.jpg" alt="Thumbnail 9">
+            <img src="product/9.jpg" alt="Product thumbnail 9">
           </button>
           <button class="products-thumb-btn" data-src="product/10.jpg" data-index="9" aria-label="Select photo 10">
-            <img src="product/10.jpg" alt="Thumbnail 10">
+            <img src="product/10.jpg" alt="Product thumbnail 10">
           </button>
           <button class="products-thumb-btn" data-src="product/11.jpg" data-index="10" aria-label="Select photo 11">
-            <img src="product/11.jpg" alt="Thumbnail 11">
+            <img src="product/11.jpg" alt="Product thumbnail 11">
           </button>
         </div>
 
@@ -101,22 +128,16 @@
 
   </main>
 
-  <div id="productsLightbox" class="anja-lightbox" aria-hidden="true">
-    <div class="anja-lightbox-backdrop" id="lightboxBackdrop"></div>
-    <div class="anja-lightbox-dialog">
-      <button type="button" class="anja-lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
-      <button type="button" class="anja-lightbox-nav anja-lightbox-prev" id="lightboxPrev"
-        aria-label="Previous image">&larr;</button>
-      <div class="anja-lightbox-media">
-        <img id="lightboxImg" src="" alt="Expanded Product Photo">
-      </div>
-      <button type="button" class="anja-lightbox-nav anja-lightbox-next" id="lightboxNext"
-        aria-label="Next image">&rarr;</button>
-    </div>
-  </div>
-
+  <script src="site.js"></script>
+  <script src="lightbox.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
+      var productImages = [
+        "product/1.jpg", "product/2.jpg", "product/3.jpg", "product/4.jpg",
+        "product/5.jpg", "product/6.jpg", "product/7.jpg", "product/8.jpg",
+        "product/9.jpg", "product/10.jpg", "product/11.jpg"
+      ];
+
       var mainImg = document.getElementById("mainDisplayImg");
       var mainFrame = document.getElementById("mainFrame");
       var thumbBtns = document.querySelectorAll(".products-thumb-btn");
@@ -124,18 +145,12 @@
       var prevBtn = document.getElementById("prevArrow");
       var nextBtn = document.getElementById("nextArrow");
 
-      var lightbox = document.getElementById("productsLightbox");
-      var lightboxImg = document.getElementById("lightboxImg");
-      var lightboxBackdrop = document.getElementById("lightboxBackdrop");
-      var lightboxClose = document.getElementById("lightboxClose");
-      var lightboxPrev = document.getElementById("lightboxPrev");
-      var lightboxNext = document.getElementById("lightboxNext");
-
       var currentIndex = 0;
-      var total = thumbBtns.length;
+      var total = productImages.length;
+      var lightboxInstance = initLightbox(productImages);
 
       function formatNumber(num) {
-        return num < 10 ? "0" + num : num;
+        return num < 10 ? "0" + num : "" + num;
       }
 
       function updateActiveImage(index) {
@@ -147,14 +162,13 @@
           currentIndex = index;
         }
 
-        var activeBtn = thumbBtns[currentIndex];
-        var newSrc = activeBtn.getAttribute("data-src");
+        var newSrc = productImages[currentIndex];
 
         mainImg.style.opacity = "0";
         setTimeout(function () {
           mainImg.src = newSrc;
           mainImg.style.opacity = "1";
-        }, 180);
+        }, 150);
 
         thumbBtns.forEach(function (btn, i) {
           if (i === currentIndex) {
@@ -168,24 +182,6 @@
         if (counter) {
           counter.textContent = formatNumber(currentIndex + 1) + " / " + formatNumber(total);
         }
-
-        if (lightbox && lightbox.classList.contains("active")) {
-          lightboxImg.src = newSrc;
-        }
-      }
-
-      function openLightbox(index) {
-        updateActiveImage(index);
-        lightbox.classList.add("active");
-        lightbox.setAttribute("aria-hidden", "false");
-        document.body.style.overflow = "hidden";
-      }
-
-      function closeLightbox() {
-        if (!lightbox) return;
-        lightbox.classList.remove("active");
-        lightbox.setAttribute("aria-hidden", "true");
-        document.body.style.overflow = "";
       }
 
       thumbBtns.forEach(function (btn) {
@@ -209,29 +205,35 @@
 
       if (mainFrame) {
         mainFrame.addEventListener("click", function () {
-          openLightbox(currentIndex);
+          if (lightboxInstance) lightboxInstance.open(currentIndex);
         });
-      }
 
-      if (lightboxClose) lightboxClose.addEventListener("click", closeLightbox);
-      if (lightboxBackdrop) lightboxBackdrop.addEventListener("click", closeLightbox);
-      if (lightboxPrev) {
-        lightboxPrev.addEventListener("click", function () {
-          updateActiveImage(currentIndex - 1);
-        });
-      }
-      if (lightboxNext) {
-        lightboxNext.addEventListener("click", function () {
-          updateActiveImage(currentIndex + 1);
-        });
+        var touchStartX = 0;
+        var touchEndX = 0;
+        mainFrame.addEventListener("touchstart", function (e) {
+          if (e.touches && e.touches.length > 0) {
+            touchStartX = e.touches[0].clientX;
+          }
+        }, { passive: true });
+
+        mainFrame.addEventListener("touchend", function (e) {
+          if (e.changedTouches && e.changedTouches.length > 0) {
+            touchEndX = e.changedTouches[0].clientX;
+            var dx = touchEndX - touchStartX;
+            if (Math.abs(dx) > 40) {
+              if (dx < 0) {
+                updateActiveImage(currentIndex + 1);
+              } else {
+                updateActiveImage(currentIndex - 1);
+              }
+            }
+          }
+        }, { passive: true });
       }
 
       document.addEventListener("keydown", function (e) {
-        if (lightbox && lightbox.classList.contains("active")) {
-          if (e.key === "Escape") closeLightbox();
-          if (e.key === "ArrowLeft") updateActiveImage(currentIndex - 1);
-          if (e.key === "ArrowRight") updateActiveImage(currentIndex + 1);
-        } else {
+        var modalActive = document.querySelector(".global-lightbox.active");
+        if (!modalActive) {
           if (e.key === "ArrowLeft") updateActiveImage(currentIndex - 1);
           if (e.key === "ArrowRight") updateActiveImage(currentIndex + 1);
         }

@@ -4,9 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects - Jovana Đoković</title>
+  <title>Projects — Jovana Đoković</title>
+  <meta name="description" content="Selected artistic and editorial photography projects: Terminology of feelings, Anemoia, Mataruška Banja, and Anja by Jovana Đoković.">
+  <meta property="og:title" content="Projects — Jovana Đoković">
+  <meta property="og:description" content="Selected Projects. Photographs made from instinct, memory, and everything that stays with us.">
+  <meta property="og:image" content="projects/terminology_naslovna.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
     rel="stylesheet">
@@ -30,11 +36,33 @@
         <li><a href="booking.html">Booking</a></li>
       </ul>
     </nav>
+    <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
   </header>
+
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-backdrop"></div>
+    <div class="mobile-drawer-content">
+      <ul class="mobile-drawer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="portraits.html">Portraits</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="booking.html">Booking</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <a href="mailto:djokovicjovana77@gmail.com" class="mobile-drawer-email">djokovicjovana77@gmail.com</a>
+        <a href="https://instagram.com/anemoia.7" target="_blank" rel="noopener noreferrer" class="mobile-drawer-social">Instagram @anemoia.7</a>
+      </div>
+    </div>
+  </div>
 
   <main class="projects-page">
 
-    <section class="projects-hero">
+    <section class="projects-hero reveal-on-scroll">
       <h1 class="projects-hero-title">Selected Projects.</h1>
       <p class="projects-hero-sub">Photographs made from instinct, memory, and everything that stays with us.</p>
       <div class="projects-divider-wrap">
@@ -45,9 +73,9 @@
     <section class="projects-list-section">
       <div class="projects-list-container">
 
-        <a href="terminology.html" class="project-item">
+        <a href="terminology.html" class="project-item reveal-on-scroll">
           <div class="project-thumb-container">
-            <img src="projects/terminology_naslovna.jpg" alt="Terminology of feelings">
+            <img src="projects/terminology_naslovna.jpg" alt="Terminology of feelings visual book cover">
           </div>
           <div class="project-content">
             <span class="project-meta">01 &bull; Visual Narrative &bull; 2023</span>
@@ -59,9 +87,9 @@
           </div>
         </a>
 
-        <a href="anemoia.html" class="project-item">
+        <a href="anemoia.html" class="project-item reveal-on-scroll">
           <div class="project-thumb-container">
-            <img src="projects/anemoia_naslovna.jpg" alt="Anemoia">
+            <img src="projects/anemoia_naslovna.jpg" alt="Anemoia video and narrative cover">
           </div>
           <div class="project-content">
             <span class="project-meta">02 &bull; Video & Narrative &bull; 2022</span>
@@ -73,9 +101,9 @@
           </div>
         </a>
 
-        <a href="mataruska-banja.html" class="project-item">
+        <a href="mataruska-banja.html" class="project-item reveal-on-scroll">
           <div class="project-thumb-container">
-            <img src="projects/Spa_naslovna.jpg" alt="Natural spa and resort Mataruška Banja">
+            <img src="projects/Spa_naslovna.jpg" alt="Natural spa and resort Mataruška Banja postcard series cover">
           </div>
           <div class="project-content">
             <span class="project-meta">03 &bull; Postcard Series &bull; 2022</span>
@@ -87,9 +115,9 @@
           </div>
         </a>
 
-        <a href="anja.html" class="project-item">
+        <a href="anja.html" class="project-item reveal-on-scroll">
           <div class="project-thumb-container">
-            <img src="projects/anja_naslovna.jpg" alt="Anja">
+            <img src="projects/anja_naslovna.jpg" alt="Anja analog photo essay cover">
           </div>
           <div class="project-content">
             <span class="project-meta">04 &bull; Analog Photo Essay &bull; 2021</span>
@@ -106,107 +134,7 @@
 
   </main>
 
-  <div id="projectModal" class="project-modal" aria-hidden="true">
-    <div class="project-modal-backdrop"></div>
-    <div class="project-modal-dialog">
-      <button type="button" class="project-modal-close" id="modalCloseBtn" aria-label="Close modal">&times;</button>
-      <div class="project-modal-body">
-        <div class="project-modal-media">
-          <img id="modalImg" src="" alt="">
-        </div>
-        <div class="project-modal-info">
-          <span id="modalMeta" class="project-modal-meta"></span>
-          <h3 id="modalTitle" class="project-modal-title"></h3>
-          <p id="modalDesc" class="project-modal-desc"></p>
-          <div class="project-modal-tags" id="modalTags"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    const projectData = [
-      {
-        title: "Terminology of feelings",
-        meta: "01 \u2022 Visual Narrative \u2022 2023",
-        img: "projects/terminology_naslovna.jpg",
-        desc: "A visual dictionary in the form of a nostalgic book exploring the rich landscape of human emotions, uncovering new words for feelings we have all experienced but often struggled to name.",
-        tags: ["Visual Book", "Emotion Dictionary", "Editorial"]
-      },
-      {
-        title: "Anemoia",
-        meta: "02 \u2022 Video & Narrative \u2022 2022",
-        img: "projects/anemoia_naslovna.jpg",
-        desc: "A personal narrative exploring the longing for what could have been and childhood dreams of dance, drawing inspiration from ballerinas in boxes and the quiet beauty in the stories we carry.",
-        tags: ["Video Art", "Dance & Movement", "Nostalgia"]
-      },
-      {
-        title: "Natural spa and resort Mataruska Banja",
-        meta: "03 \u2022 Postcard Series \u2022 2022",
-        img: "projects/Spa_naslovna.jpg",
-        desc: "Reimagining the nostalgic allure of vintage postcards through a contemporary lens, confronting the passage of time and the delicate balance between beauty and decay in an abandoned resort.",
-        tags: ["Postcards", "Memory & Decay", "Photo Essay"]
-      },
-      {
-        title: "Anja",
-        meta: "04 \u2022 Analog Photo Essay \u2022 2021",
-        img: "projects/anja_naslovna.jpg",
-        desc: "A black-and-white analog photo essay exploring the harrowing journey, emotional weight, and quiet resilience of a young woman adapting to life with a stoma after medical missteps.",
-        tags: ["Analog Photography", "Documentary Essay", "Black & White"]
-      }
-    ];
-
-    const modal = document.getElementById('projectModal');
-    const modalImg = document.getElementById('modalImg');
-    const modalTitle = document.getElementById('modalTitle');
-    const modalMeta = document.getElementById('modalMeta');
-    const modalDesc = document.getElementById('modalDesc');
-    const modalTags = document.getElementById('modalTags');
-    const closeBtn = document.getElementById('modalCloseBtn');
-    const backdrop = document.querySelector('.project-modal-backdrop');
-
-    function openModal(index) {
-      const data = projectData[index];
-      if (!data) return;
-      modalImg.src = data.img;
-      modalImg.alt = data.title;
-      modalTitle.textContent = data.title;
-      modalMeta.textContent = data.meta;
-      modalDesc.textContent = data.desc;
-      modalTags.innerHTML = '';
-      data.tags.forEach(tag => {
-        const span = document.createElement('span');
-        span.className = 'project-modal-tag';
-        span.textContent = tag;
-        modalTags.appendChild(span);
-      });
-      modal.classList.add('active');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeModal() {
-      modal.classList.remove('active');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    document.querySelectorAll('.project-item').forEach(item => {
-      item.addEventListener('click', () => {
-        const index = parseInt(item.getAttribute('data-project'), 10);
-        openModal(index);
-      });
-    });
-
-    closeBtn.addEventListener('click', closeModal);
-    backdrop.addEventListener('click', closeModal);
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && modal.classList.contains('active')) {
-        closeModal();
-      }
-    });
-  </script>
+  <script src="site.js"></script>
 </body>
 
 </html>

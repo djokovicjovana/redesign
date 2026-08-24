@@ -4,9 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Booking - Jovana Đoković</title>
+  <title>Booking & Inquiries — Jovana Đoković</title>
+  <meta name="description"
+    content="Book a photography session with Jovana Đoković. Available for portraits, events, commercial shoots, and artistic collaborations worldwide.">
+  <meta property="og:title" content="Booking & Inquiries — Jovana Đoković">
+  <meta property="og:description"
+    content="Let's Create Together. Available for portraits, events, commercial shoots and artistic collaborations worldwide.">
+  <meta property="og:image" content="about.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Montserrat:wght@300;400;500&display=swap"
     rel="stylesheet">
@@ -30,21 +38,44 @@
         <li><a href="booking.html" class="active">Booking</a></li>
       </ul>
     </nav>
+    <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
   </header>
+
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-backdrop"></div>
+    <div class="mobile-drawer-content">
+      <ul class="mobile-drawer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="portraits.html">Portraits</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="booking.html" class="active">Booking</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <a href="mailto:djokovicjovana77@gmail.com" class="mobile-drawer-email">djokovicjovana77@gmail.com</a>
+        <a href="https://instagram.com/anemoia.7" target="_blank" rel="noopener noreferrer"
+          class="mobile-drawer-social">Instagram @anemoia.7</a>
+      </div>
+    </div>
+  </div>
 
   <main class="booking-page">
 
-    <section class="booking-hero">
+    <section class="booking-hero reveal-on-scroll">
       <h1 class="booking-hero-title">Let's Create Together.</h1>
-      <p class="booking-hero-sub">Available for portraits, events, commercial shoots and artistic collaborations
-        worldwide.</p>
+      <p class="booking-hero-sub">Available for portraits, events, commercial shoots and artistic collaborations.</p>
       <div class="booking-divider-wrap">
         <div class="booking-divider"></div>
       </div>
     </section>
 
     <section class="booking-content-section">
-      <div class="booking-container">
+
+      <div class="booking-container reveal-on-scroll">
 
         <div class="booking-info-col">
           <div class="booking-info-card">
@@ -58,7 +89,11 @@
             <div class="booking-detail-list">
               <div class="booking-detail-item">
                 <span class="booking-detail-title">Location</span>
-                <span class="booking-detail-val">Novi Sad / Belgrade &bull; Worldwide Available</span>
+                <span class="booking-detail-val">Novi Sad & Serbia</span>
+              </div>
+              <div class="booking-detail-item">
+                <span class="booking-detail-title">Art Book</span>
+                <span class="booking-detail-val">Terminology of feelings &bull; Available for Order</span>
               </div>
               <div class="booking-detail-item">
                 <span class="booking-detail-title">Direct Email</span>
@@ -108,7 +143,7 @@
             <h2 class="booking-form-heading">Send an Inquiry</h2>
             <p class="booking-form-subtitle">Fill in the details below and I'll get back to you within 24-48 hours.</p>
 
-            <form class="booking-form" action="#" method="POST" onsubmit="event.preventDefault();">
+            <form class="booking-form" id="bookingForm" action="#" method="POST">
               <div class="booking-form-row">
                 <div class="booking-field">
                   <label for="name" class="booking-label">Your Name</label>
@@ -124,14 +159,15 @@
 
               <div class="booking-form-row">
                 <div class="booking-field">
-                  <label for="session-type" class="booking-label">Session Type</label>
+                  <label for="session-type" class="booking-label">Session / Inquiry Type</label>
                   <div class="booking-select-wrap">
                     <select id="session-type" name="session_type" class="booking-select" required>
-                      <option value="" disabled selected>Select session type</option>
+                      <option value="" disabled selected>Select inquiry type</option>
                       <option value="portraits">Portrait Session</option>
-                      <option value="events">Event / Nightlife Coverage</option>
+                      <option value="events">Event / Nightlife</option>
                       <option value="products">Product & Commercial</option>
                       <option value="editorial">Editorial / Artistic Collaboration</option>
+                      <option value="book">Buy a Book - Terminology of feelings</option>
                       <option value="other">Other Inquiry</option>
                     </select>
                   </div>
@@ -158,10 +194,179 @@
         </div>
 
       </div>
+
+      <div class="booking-book-banner reveal-on-scroll">
+        <div class="booking-book-banner-inner">
+          <div class="booking-book-thumb">
+            <img src="projects/terminology_naslovna.jpg" alt="Terminology of feelings visual book cover">
+          </div>
+          <div class="booking-book-text">
+            <div class="booking-book-badge-wrap">
+              <span class="booking-book-badge">Art Book For Sale</span>
+            </div>
+            <h2 class="booking-book-title">Terminology of feelings</h2>
+            <p class="booking-book-desc">
+              A nostalgic visual dictionary exploring the rich landscape of human emotions through 15 curated terms.
+              Handcrafted art book available for purchase.
+            </p>
+            <div class="booking-book-actions">
+              <a href="#bookingForm" class="booking-book-buy-btn" id="buyBookCardBtn">Buy a Book &rarr;</a>
+              <a href="terminology.html" class="booking-book-preview-link">Preview Spreads</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-faq-section reveal-on-scroll">
+        <h2 class="booking-faq-title">Frequently Asked Questions</h2>
+        <div class="booking-faq-grid">
+
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>What is your typical turnaround time for delivering photos?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>For portrait sessions and events, initial previews are delivered within 48 hours, and the full
+                retouched high-resolution digital gallery is delivered within 1 to 2 weeks.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>Do you travel outside Novi Sad and Belgrade?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, I am available for assignments, tours, and bespoke projects across Serbia and internationally.
+                Travel and accommodation details are arranged transparently during our consultation.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>What is included in a portrait session?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Each session includes pre-shoot concept and moodboard guidance, location scouting recommendations, 1–2
+                hours of shooting time, and 20–30 hand-edited high-resolution images delivered via private online
+                gallery.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question" aria-expanded="false">
+              <span>How do we secure a date for event or commercial shoots?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>Dates are reserved upon confirmation of project scope and a booking deposit. Feel free to submit an
+                inquiry above with your target dates and project requirements.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </section>
 
   </main>
 
+  <div id="bookingSuccessModal" class="booking-success-modal" aria-hidden="true" role="dialog">
+    <div class="booking-success-backdrop" id="bookingSuccessBackdrop"></div>
+    <div class="booking-success-card">
+      <h3>Inquiry Received</h3>
+      <p>Thank you for reaching out. Your message has been received and I will review your vision and reply within 24–48
+        hours.</p>
+      <button type="button" class="booking-modal-close-btn" id="bookingSuccessClose">Close</button>
+    </div>
+  </div>
+
+  <script src="site.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var form = document.getElementById("bookingForm");
+      var modal = document.getElementById("bookingSuccessModal");
+      var modalClose = document.getElementById("bookingSuccessClose");
+      var modalBackdrop = document.getElementById("bookingSuccessBackdrop");
+
+      var urlParams = new URLSearchParams(window.location.search);
+      var typeParam = urlParams.get("type");
+      var sessionSelect = document.getElementById("session-type");
+      if (typeParam && sessionSelect) {
+        if (typeParam === "book" || typeParam === "buy-book") {
+          sessionSelect.value = "book";
+        }
+      }
+
+      var buyBookBtn = document.getElementById("buyBookCardBtn");
+      if (buyBookBtn) {
+        buyBookBtn.addEventListener("click", function (e) {
+          e.preventDefault();
+          if (sessionSelect) {
+            sessionSelect.value = "book";
+          }
+          if (form) {
+            form.scrollIntoView({ behavior: "smooth", block: "start" });
+            var nameInput = document.getElementById("name");
+            if (nameInput) {
+              setTimeout(function () { nameInput.focus(); }, 400);
+            }
+          }
+        });
+      }
+
+      function openModal() {
+        if (!modal) return;
+        modal.classList.add("active");
+        modal.setAttribute("aria-hidden", "false");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        if (!modal) return;
+        modal.classList.remove("active");
+        modal.setAttribute("aria-hidden", "true");
+        document.body.style.overflow = "";
+      }
+
+      if (form) {
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          openModal();
+          form.reset();
+        });
+      }
+
+      if (modalClose) modalClose.addEventListener("click", closeModal);
+      if (modalBackdrop) modalBackdrop.addEventListener("click", closeModal);
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && modal && modal.classList.contains("active")) {
+          closeModal();
+        }
+      });
+
+      var faqButtons = document.querySelectorAll(".faq-question");
+      faqButtons.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+          var item = btn.parentElement;
+          var isOpen = item.classList.contains("active");
+
+          document.querySelectorAll(".faq-item").forEach(function (otherItem) {
+            otherItem.classList.remove("active");
+            var otherBtn = otherItem.querySelector(".faq-question");
+            if (otherBtn) otherBtn.setAttribute("aria-expanded", "false");
+          });
+
+          if (!isOpen) {
+            item.classList.add("active");
+            btn.setAttribute("aria-expanded", "true");
+          }
+        });
+      });
+    });
+  </script>
 </body>
 
 </html>

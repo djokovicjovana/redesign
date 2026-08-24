@@ -4,9 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Natural spa and resort Mataruška Banja - Projects - Jovana Đoković</title>
+  <title>Natural spa and resort Mataruška Banja — Projects — Jovana Đoković</title>
+  <meta name="description" content="Natural spa and resort Mataruška Banja — reimagining vintage postcards through a contemporary lens of memory and decay by Jovana Đoković.">
+  <meta property="og:title" content="Natural spa and resort Mataruška Banja — Projects — Jovana Đoković">
+  <meta property="og:description" content="Postcard Series & Memory. Reimagining the nostalgic allure of vintage postcards through contemporary decay.">
+  <meta property="og:image" content="projects/Spa_naslovna.jpg">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
     rel="stylesheet">
@@ -30,7 +36,29 @@
         <li><a href="booking.html">Booking</a></li>
       </ul>
     </nav>
+    <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
   </header>
+
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-backdrop"></div>
+    <div class="mobile-drawer-content">
+      <ul class="mobile-drawer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="portraits.html">Portraits</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="booking.html">Booking</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <a href="mailto:djokovicjovana77@gmail.com" class="mobile-drawer-email">djokovicjovana77@gmail.com</a>
+        <a href="https://instagram.com/anemoia.7" target="_blank" rel="noopener noreferrer" class="mobile-drawer-social">Instagram @anemoia.7</a>
+      </div>
+    </div>
+  </div>
 
   <main class="spa-page">
     <div class="spa-container">
@@ -39,11 +67,11 @@
         <a href="projects.html" class="spa-back-link">&larr; Back to Projects</a>
       </div>
 
-      <section class="spa-intro-section">
+      <section class="spa-intro-section reveal-on-scroll">
         <h1 class="spa-main-title">Natural spa and resort Mataruška Banja</h1>
       </section>
 
-      <section class="spa-slider-section">
+      <section class="spa-slider-section reveal-on-scroll">
         <div class="spa-slider-wrapper">
           <button type="button" class="spa-nav-btn spa-prev-btn" id="spaPrevBtn" aria-label="Previous Postcard">&larr;</button>
 
@@ -78,7 +106,7 @@
         </div>
       </section>
 
-      <section class="spa-text-section">
+      <section class="spa-text-section reveal-on-scroll">
         <div class="spa-text-block">
           <p>
             In this project, I reimagine the nostalgic allure of vintage postcards through a contemporary lens, focusing
@@ -111,127 +139,106 @@
     </div>
   </main>
 
-  <div id="spaLightbox" class="anja-lightbox" aria-hidden="true">
-    <div class="anja-lightbox-backdrop" id="spaLightboxBackdrop"></div>
-    <div class="anja-lightbox-dialog">
-      <button type="button" class="anja-lightbox-close" id="spaLightboxClose" aria-label="Close lightbox">&times;</button>
-      <button type="button" class="anja-lightbox-nav anja-lightbox-prev" id="spaLightboxPrev" aria-label="Previous postcard">&larr;</button>
-      <div class="anja-lightbox-media">
-        <img id="spaLightboxImg" src="" alt="Postcard enlarged view">
-      </div>
-      <button type="button" class="anja-lightbox-nav anja-lightbox-next" id="spaLightboxNext" aria-label="Next postcard">&rarr;</button>
-    </div>
-  </div>
-
+  <script src="site.js"></script>
+  <script src="lightbox.js"></script>
   <script>
-    const postcards = [
-      { src: "projects/spa/1.jpg", alt: "Pozdrav iz Mataruške Banje - Postcard 1" },
-      { src: "projects/spa/2.jpg", alt: "Pozdrav iz Mataruške Banje - Postcard 2" },
-      { src: "projects/spa/3.jpg", alt: "Pozdrav iz Mataruške Banje - Postcard 3" },
-      { src: "projects/spa/4.jpg", alt: "Pozdrav iz Mataruške Banje - Postcard 4" },
-      { src: "projects/spa/5.jpeg", alt: "Pozdrav iz Mataruške Banje - Postcard 5" }
-    ];
+    document.addEventListener("DOMContentLoaded", function () {
+      var postcards = [
+        { src: "projects/spa/1.jpg", alt: "Pozdrav iz Mataruške Banje - Postcard 1" },
+        { src: "projects/spa/2.jpg", alt: "Pozdrav iz Mataruške Banje - Postcard 2" },
+        { src: "projects/spa/3.jpg", alt: "Pozdrav iz Mataruške Banje - Postcard 3" },
+        { src: "projects/spa/4.jpg", alt: "Pozdrav iz Mataruške Banje - Postcard 4" },
+        { src: "projects/spa/5.jpeg", alt: "Pozdrav iz Mataruške Banje - Postcard 5" }
+      ];
 
-    let currentSpaIndex = 0;
-    const spaActiveImg = document.getElementById('spaActiveImg');
-    const spaCounter = document.getElementById('spaCounter');
-    const spaPrevBtn = document.getElementById('spaPrevBtn');
-    const spaNextBtn = document.getElementById('spaNextBtn');
-    const spaThumbs = document.querySelectorAll('.spa-thumb');
-    const spaSliderCard = document.getElementById('spaSliderCard');
+      var currentSpaIndex = 0;
+      var spaActiveImg = document.getElementById("spaActiveImg");
+      var spaCounter = document.getElementById("spaCounter");
+      var spaPrevBtn = document.getElementById("spaPrevBtn");
+      var spaNextBtn = document.getElementById("spaNextBtn");
+      var spaThumbs = document.querySelectorAll(".spa-thumb");
+      var spaSliderCard = document.getElementById("spaSliderCard");
 
-    const lightbox = document.getElementById('spaLightbox');
-    const lightboxImg = document.getElementById('spaLightboxImg');
-    const closeBtn = document.getElementById('spaLightboxClose');
-    const backdrop = document.getElementById('spaLightboxBackdrop');
-    const prevLightboxBtn = document.getElementById('spaLightboxPrev');
-    const nextLightboxBtn = document.getElementById('spaLightboxNext');
+      var lightboxInstance = initLightbox(postcards);
 
-    function updatePostcard(index) {
-      if (index < 0) index = 0;
-      if (index >= postcards.length) index = postcards.length - 1;
-      currentSpaIndex = index;
+      function updatePostcard(index) {
+        if (index < 0) index = 0;
+        if (index >= postcards.length) index = postcards.length - 1;
+        currentSpaIndex = index;
 
-      spaActiveImg.style.opacity = '0';
-      setTimeout(() => {
-        spaActiveImg.src = postcards[currentSpaIndex].src;
-        spaActiveImg.alt = postcards[currentSpaIndex].alt;
-        spaActiveImg.style.opacity = '1';
-      }, 150);
+        spaActiveImg.style.opacity = "0";
+        setTimeout(function () {
+          spaActiveImg.src = postcards[currentSpaIndex].src;
+          spaActiveImg.alt = postcards[currentSpaIndex].alt;
+          spaActiveImg.style.opacity = "1";
+        }, 150);
 
-      spaCounter.textContent = (currentSpaIndex + 1) + ' / ' + postcards.length;
-      spaPrevBtn.disabled = currentSpaIndex === 0;
-      spaNextBtn.disabled = currentSpaIndex === postcards.length - 1;
+        spaCounter.textContent = (currentSpaIndex + 1) + " / " + postcards.length;
+        spaPrevBtn.disabled = currentSpaIndex === 0;
+        spaNextBtn.disabled = currentSpaIndex === postcards.length - 1;
 
-      spaThumbs.forEach((thumb, idx) => {
-        if (idx === currentSpaIndex) {
-          thumb.classList.add('active');
-        } else {
-          thumb.classList.remove('active');
+        spaThumbs.forEach(function (thumb, idx) {
+          if (idx === currentSpaIndex) {
+            thumb.classList.add("active");
+          } else {
+            thumb.classList.remove("active");
+          }
+        });
+      }
+
+      spaPrevBtn.addEventListener("click", function () {
+        updatePostcard(currentSpaIndex - 1);
+      });
+
+      spaNextBtn.addEventListener("click", function () {
+        updatePostcard(currentSpaIndex + 1);
+      });
+
+      spaThumbs.forEach(function (thumb) {
+        thumb.addEventListener("click", function () {
+          var idx = parseInt(thumb.getAttribute("data-index"), 10);
+          updatePostcard(idx);
+        });
+      });
+
+      if (spaSliderCard) {
+        spaSliderCard.style.cursor = "zoom-in";
+        spaSliderCard.addEventListener("click", function () {
+          if (lightboxInstance) lightboxInstance.open(currentSpaIndex);
+        });
+
+        var touchStartX = 0;
+        var touchEndX = 0;
+        spaSliderCard.addEventListener("touchstart", function (e) {
+          if (e.touches && e.touches.length > 0) {
+            touchStartX = e.touches[0].clientX;
+          }
+        }, { passive: true });
+
+        spaSliderCard.addEventListener("touchend", function (e) {
+          if (e.changedTouches && e.changedTouches.length > 0) {
+            touchEndX = e.changedTouches[0].clientX;
+            var dx = touchEndX - touchStartX;
+            if (Math.abs(dx) > 40) {
+              if (dx < 0 && currentSpaIndex < postcards.length - 1) {
+                updatePostcard(currentSpaIndex + 1);
+              } else if (dx > 0 && currentSpaIndex > 0) {
+                updatePostcard(currentSpaIndex - 1);
+              }
+            }
+          }
+        }, { passive: true });
+      }
+
+      document.addEventListener("keydown", function (e) {
+        var modalActive = document.querySelector(".global-lightbox.active");
+        if (!modalActive) {
+          if (e.key === "ArrowLeft" && currentSpaIndex > 0) updatePostcard(currentSpaIndex - 1);
+          if (e.key === "ArrowRight" && currentSpaIndex < postcards.length - 1) updatePostcard(currentSpaIndex + 1);
         }
       });
-    }
-
-    function openLightbox(index) {
-      updatePostcard(index);
-      lightboxImg.src = postcards[currentSpaIndex].src;
-      lightboxImg.alt = postcards[currentSpaIndex].alt;
-      lightbox.classList.add('active');
-      lightbox.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove('active');
-      lightbox.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-    }
-
-    function showPrevLightbox() {
-      currentSpaIndex = (currentSpaIndex - 1 + postcards.length) % postcards.length;
-      updatePostcard(currentSpaIndex);
-      lightboxImg.src = postcards[currentSpaIndex].src;
-      lightboxImg.alt = postcards[currentSpaIndex].alt;
-    }
-
-    function showNextLightbox() {
-      currentSpaIndex = (currentSpaIndex + 1) % postcards.length;
-      updatePostcard(currentSpaIndex);
-      lightboxImg.src = postcards[currentSpaIndex].src;
-      lightboxImg.alt = postcards[currentSpaIndex].alt;
-    }
-
-    spaPrevBtn.addEventListener('click', () => updatePostcard(currentSpaIndex - 1));
-    spaNextBtn.addEventListener('click', () => updatePostcard(currentSpaIndex + 1));
-
-    spaThumbs.forEach(thumb => {
-      thumb.addEventListener('click', () => {
-        const idx = parseInt(thumb.getAttribute('data-index'), 10);
-        updatePostcard(idx);
-      });
-    });
-
-    spaSliderCard.addEventListener('click', () => {
-      openLightbox(currentSpaIndex);
-    });
-
-    closeBtn.addEventListener('click', closeLightbox);
-    backdrop.addEventListener('click', closeLightbox);
-    prevLightboxBtn.addEventListener('click', showPrevLightbox);
-    nextLightboxBtn.addEventListener('click', showNextLightbox);
-
-    document.addEventListener('keydown', (e) => {
-      if (lightbox.classList.contains('active')) {
-        if (e.key === 'Escape') closeLightbox();
-        if (e.key === 'ArrowLeft') showPrevLightbox();
-        if (e.key === 'ArrowRight') showNextLightbox();
-      } else {
-        if (e.key === 'ArrowLeft') updatePostcard(currentSpaIndex - 1);
-        if (e.key === 'ArrowRight') updatePostcard(currentSpaIndex + 1);
-      }
     });
   </script>
-
 </body>
 
 </html>

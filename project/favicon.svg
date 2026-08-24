@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#1b0606"/>
+  <rect width="60" height="60" x="2" y="2" rx="12" fill="none" stroke="#f5eee6" stroke-opacity="0.25" stroke-width="1.5"/>
+  <text x="32" y="42" font-family="'Cormorant Garamond', Georgia, serif" font-size="34" font-weight="600" fill="#f5eee6" text-anchor="middle">JĐ</text>
+</svg>

@@ -4,9 +4,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andrea - Portraits - Jovana Đoković</title>
+  <title>Andrea — Portraits — Jovana Đoković</title>
+  <meta name="description" content="Andrea — an atmospheric portrait series playing with deep blue highlights, slatted shadows, and silent contemplation by Jovana Đoković.">
+  <meta property="og:title" content="Andrea — Portraits — Jovana Đoković">
+  <meta property="og:description" content="Shadows, ambiance, and silent contemplation. Portrait study by Jovana Đoković.">
+  <meta property="og:image" content="foto_portreti/andrea/andrea0.jpg">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400&display=swap"
     rel="stylesheet">
@@ -30,7 +36,29 @@
         <li><a href="booking.html">Booking</a></li>
       </ul>
     </nav>
+    <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+    </button>
   </header>
+
+  <div class="mobile-drawer" id="mobileDrawer" aria-hidden="true">
+    <div class="mobile-drawer-backdrop"></div>
+    <div class="mobile-drawer-content">
+      <ul class="mobile-drawer-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="portraits.html" class="active">Portraits</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="booking.html">Booking</a></li>
+      </ul>
+      <div class="mobile-drawer-footer">
+        <a href="mailto:djokovicjovana77@gmail.com" class="mobile-drawer-email">djokovicjovana77@gmail.com</a>
+        <a href="https://instagram.com/anemoia.7" target="_blank" rel="noopener noreferrer" class="mobile-drawer-social">Instagram @anemoia.7</a>
+      </div>
+    </div>
+  </div>
 
   <main class="portrait-story-page">
     <div class="portrait-story-container">
@@ -39,48 +67,47 @@
         <a href="portraits.html" class="portrait-back-link">&larr; Back to Portraits</a>
       </div>
 
-      <section class="portrait-detail-hero">
-        <div class="portrait-detail-img-container">
-          <img src="foto_portreti/andrea/andrea0.jpg" alt="Andrea">
+      <section class="portrait-detail-hero reveal-on-scroll">
+        <div class="portrait-detail-img-container" data-index="0">
+          <img src="foto_portreti/andrea/andrea0.jpg" alt="Andrea - Portrait study with shadows">
         </div>
         <div class="portrait-detail-info">
           <h1 class="portrait-detail-title">Andrea</h1>
           <p class="portrait-detail-subtitle">Shadows, ambiance, and silent contemplation.</p>
           <div class="portrait-detail-description">
-            <p>Atmospheric mood piece playing with deep blue highlights and precise slatted shadows across the face. A
-              portrait focused on stillness, inner thoughts, and moody shadows.</p>
+            <p>Atmospheric mood piece playing with deep blue highlights and precise slatted shadows across the face. A portrait focused on stillness, inner thoughts, and moody shadows.</p>
           </div>
         </div>
       </section>
 
-      <section class="portrait-story-section">
+      <section class="portrait-story-section reveal-on-scroll">
         <div class="portrait-story-centerpiece">
-          <div class="portrait-story-img-wrap">
-            <img src="foto_portreti/andrea/andrea1.jpg" alt="Andrea">
+          <div class="portrait-story-img-wrap" data-index="1">
+            <img src="foto_portreti/andrea/andrea1.jpg" alt="Andrea - Profile shadow reflection" loading="lazy">
           </div>
         </div>
       </section>
 
-      <section class="portrait-story-section">
+      <section class="portrait-story-section reveal-on-scroll">
         <div class="portrait-story-two-col">
           <div class="portrait-story-left-stack">
-            <div class="portrait-story-img-wrap portrait-story-img-small-1">
-              <img src="foto_portreti/andrea/andrea2.jpg" alt="Andrea">
+            <div class="portrait-story-img-wrap portrait-story-img-small-1" data-index="2">
+              <img src="foto_portreti/andrea/andrea2.jpg" alt="Andrea - Blue light contour" loading="lazy">
             </div>
-            <div class="portrait-story-img-wrap portrait-story-img-small-2">
-              <img src="foto_portreti/andrea/andrea4.jpg" alt="Andrea">
+            <div class="portrait-story-img-wrap portrait-story-img-small-2" data-index="3">
+              <img src="foto_portreti/andrea/andrea4.jpg" alt="Andrea - Slatted light glance" loading="lazy">
             </div>
           </div>
-          <div class="portrait-story-img-wrap">
-            <img src="foto_portreti/andrea/andrea3.jpg" alt="Andrea">
+          <div class="portrait-story-img-wrap" data-index="4">
+            <img src="foto_portreti/andrea/andrea3.jpg" alt="Andrea - Dramatic blue shadow" loading="lazy">
           </div>
         </div>
       </section>
 
-      <section class="portrait-story-section">
+      <section class="portrait-story-section reveal-on-scroll">
         <div class="portrait-story-centerpiece">
-          <div class="portrait-story-img-wrap">
-            <img src="foto_portreti/andrea/andrea5.jpg" alt="Andrea">
+          <div class="portrait-story-img-wrap" data-index="5">
+            <img src="foto_portreti/andrea/andrea5.jpg" alt="Andrea - Meditative gaze" loading="lazy">
           </div>
         </div>
       </section>
@@ -92,79 +119,21 @@
     </div>
   </main>
 
-  <div id="portraitLightbox" class="anja-lightbox" aria-hidden="true">
-    <div class="anja-lightbox-backdrop" id="lightboxBackdrop"></div>
-    <div class="anja-lightbox-dialog">
-      <button type="button" class="anja-lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
-      <button type="button" class="anja-lightbox-nav anja-lightbox-prev" id="lightboxPrev" aria-label="Previous image">&larr;</button>
-      <div class="anja-lightbox-media">
-        <img id="lightboxImg" src="" alt="Enlarged portrait">
-      </div>
-      <button type="button" class="anja-lightbox-nav anja-lightbox-next" id="lightboxNext" aria-label="Next image">&rarr;</button>
-    </div>
-  </div>
-
+  <script src="site.js"></script>
+  <script src="lightbox.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      const imgElements = Array.from(document.querySelectorAll('.portrait-detail-img-container img, .portrait-story-img-wrap img'));
-      const images = imgElements.map(img => ({ src: img.getAttribute('src'), alt: img.getAttribute('alt') || 'Andrea' }));
-
-      const lightbox = document.getElementById('portraitLightbox');
-      const lightboxImg = document.getElementById('lightboxImg');
-      const lightboxBackdrop = document.getElementById('lightboxBackdrop');
-      const lightboxClose = document.getElementById('lightboxClose');
-      const lightboxPrev = document.getElementById('lightboxPrev');
-      const lightboxNext = document.getElementById('lightboxNext');
-
-      let currentIndex = 0;
-
-      function updateLightbox(index) {
-        if (index < 0) {
-          currentIndex = images.length - 1;
-        } else if (index >= images.length) {
-          currentIndex = 0;
-        } else {
-          currentIndex = index;
-        }
-        lightboxImg.src = images[currentIndex].src;
-        lightboxImg.alt = images[currentIndex].alt;
-      }
-
-      function openLightbox(index) {
-        updateLightbox(index);
-        lightbox.classList.add('active');
-        lightbox.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-      }
-
-      function closeLightbox() {
-        lightbox.classList.remove('active');
-        lightbox.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-      }
-
-      imgElements.forEach((img, idx) => {
-        const parent = img.parentElement;
-        if (parent) {
-          parent.addEventListener('click', () => openLightbox(idx));
-        }
-      });
-
-      if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
-      if (lightboxBackdrop) lightboxBackdrop.addEventListener('click', closeLightbox);
-      if (lightboxPrev) lightboxPrev.addEventListener('click', () => updateLightbox(currentIndex - 1));
-      if (lightboxNext) lightboxNext.addEventListener('click', () => updateLightbox(currentIndex + 1));
-
-      document.addEventListener('keydown', (e) => {
-        if (lightbox && lightbox.classList.contains('active')) {
-          if (e.key === 'Escape') closeLightbox();
-          if (e.key === 'ArrowLeft') updateLightbox(currentIndex - 1);
-          if (e.key === 'ArrowRight') updateLightbox(currentIndex + 1);
-        }
-      });
+      var andreaImages = [
+        "foto_portreti/andrea/andrea0.jpg",
+        "foto_portreti/andrea/andrea1.jpg",
+        "foto_portreti/andrea/andrea2.jpg",
+        "foto_portreti/andrea/andrea4.jpg",
+        "foto_portreti/andrea/andrea3.jpg",
+        "foto_portreti/andrea/andrea5.jpg"
+      ];
+      initLightbox(andreaImages, ".portrait-detail-img-container, .portrait-story-img-wrap");
     });
   </script>
-
 </body>
 
 </html>
