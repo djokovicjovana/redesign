@@ -14,7 +14,128 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=8">
+  <style>
+    @media (max-width: 900px) {
+      body {
+        height: 100vh !important;
+        height: 100dvh !important;
+        overflow: hidden !important;
+      }
+      .fullscreen-split {
+        flex-direction: column !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        overflow: hidden !important;
+      }
+      .left-section {
+        flex: 0 0 46% !important;
+        height: 46% !important;
+        position: relative !important;
+        padding: 2.2rem 1.75rem 1.2rem !important;
+        justify-content: center !important;
+        align-items: flex-start !important;
+        text-align: left !important;
+        width: 100% !important;
+      }
+      .branding {
+        position: static !important;
+        margin-bottom: 0.85rem !important;
+      }
+      .main-title {
+        font-size: clamp(2rem, 7.5vw, 2.6rem) !important;
+        margin-bottom: 0.35rem !important;
+      }
+      .subtitle {
+        font-size: clamp(1.1rem, 3.5vw, 1.35rem) !important;
+        gap: 0.75rem !important;
+      }
+      .line {
+        width: 45px !important;
+      }
+      .description {
+        font-size: clamp(0.95rem, 3vw, 1.15rem) !important;
+        text-align: left !important;
+        max-width: 100% !important;
+        transform: none !important;
+        line-height: 1.45 !important;
+        opacity: 0.9 !important;
+      }
+      .right-section {
+        flex: 1 1 54% !important;
+        height: 54% !important;
+        width: 100% !important;
+        position: relative !important;
+        overflow: hidden !important;
+        background-position: center 26% !important;
+        background-color: #1a1a1a !important;
+      }
+      .overlay-nav {
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        padding: 1.1rem 1rem 1.6rem !important;
+        background: transparent !important;
+        background-color: transparent !important;
+        z-index: 10 !important;
+      }
+      .overlay-nav ul {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        align-items: center !important;
+        gap: 0.6rem 1.4rem !important;
+        max-width: 350px !important;
+        margin: 0 auto !important;
+        list-style: none !important;
+      }
+      .overlay-nav a {
+        color: #f5eee6 !important;
+        font-family: 'Cormorant Garamond', serif !important;
+        font-size: 1.32rem !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.7px !important;
+        text-decoration: none !important;
+        display: inline-block !important;
+      }
+    }
+    @media (max-width: 600px) {
+      .left-section {
+        flex: 0 0 44% !important;
+        height: 44% !important;
+        padding: 1.8rem 1.25rem 0.8rem !important;
+      }
+      .branding {
+        margin-bottom: 0.65rem !important;
+      }
+      .main-title {
+        font-size: clamp(1.85rem, 8vw, 2.35rem) !important;
+      }
+      .description {
+        font-size: 0.92rem !important;
+        line-height: 1.4 !important;
+      }
+      .right-section {
+        flex: 1 1 56% !important;
+        height: 56% !important;
+        background-position: center 26% !important;
+      }
+      .overlay-nav {
+        padding: 0.9rem 0.8rem 1.4rem !important;
+        background: transparent !important;
+        background-color: transparent !important;
+      }
+      .overlay-nav ul {
+        gap: 0.5rem 1.2rem !important;
+        max-width: 330px !important;
+      }
+      .overlay-nav a {
+        font-size: 1.22rem !important;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -41,6 +162,7 @@
           <li><a href="events.html">Events</a></li>
           <li><a href="portraits.html">Portraits</a></li>
           <li><a href="projects.html">Projects</a></li>
+          <li><a href="bts.html">BTS</a></li>
           <li><a href="products.html">Products</a></li>
           <li><a href="booking.html">Booking</a></li>
         </ul>
