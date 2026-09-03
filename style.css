@@ -941,14 +941,30 @@ body.scrollable {
     width: 100%;
     max-height: 70vh;
   }
-  .events-row-split-left-stack .events-item-tall,
-  .events-row-split-left-tall .events-item-tall,
-  .events-row-wide-portrait .events-item-portrait {
+  .events-row-split-left-stack .events-item-tall {
     min-height: unset;
     height: auto;
     aspect-ratio: 16 / 10;
     width: 100%;
-    max-height: 75vh;
+    max-height: 70vh;
+  }
+  .events-row-split-left-tall .events-item-tall,
+  .events-row-wide-portrait .events-item-portrait,
+  .events-item-portrait {
+    min-height: unset;
+    height: auto;
+    max-height: none;
+    aspect-ratio: auto;
+    width: 100%;
+  }
+  .events-row-split-left-tall .events-item-tall img,
+  .events-row-wide-portrait .events-item-portrait img,
+  .events-item-portrait img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+    object-fit: cover;
+    display: block;
   }
   .events-row-quad {
     grid-template-columns: repeat(2, 1fr);
