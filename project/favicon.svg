@@ -1,5 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#1b0606"/>
-  <rect width="60" height="60" x="2" y="2" rx="12" fill="none" stroke="#f5eee6" stroke-opacity="0.25" stroke-width="1.5"/>
-  <text x="32" y="42" font-family="'Cormorant Garamond', Georgia, serif" font-size="34" font-weight="600" fill="#f5eee6" text-anchor="middle">JĐ</text>
+  <rect width="64" height="64" rx="14" fill="#0d0d0d"/>
+  <g transform="translate(10, 12) scale(0.68)" fill="#f5eee6">
+    <path d="M20,6 L20,30 C20,38 14,42 8,42 L8,36 C11,36 14,34 14,30 L14,6 L20,6 Z"/>
+    <path d="M14,22 L14,28 L8,28 L8,22 L14,22 Z"/>
+    <path d="M24,6 L24,42 L30,42 C40,42 46,34 46,24 C46,14 40,6 30,6 L24,6 Z M30,12 C37,12 40,17 40,24 C40,31 37,36 30,36 L30,12 Z"/>
+  </g>
 </svg>

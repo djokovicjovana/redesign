@@ -1,22 +1,27 @@
 <!DOCTYPE html>
 <html lang="sr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Behind the Scenes — Jovana Đoković</title>
-  <meta name="description" content="Behind the scenes photographs from film sets and creative productions by Jovana Đoković.">
+  <title>Behind the Scenes - Jovana Đoković</title>
+  <meta name="description"
+    content="Behind the scenes photographs from film sets and creative productions by Jovana Đoković.">
   <meta property="og:title" content="Behind the Scenes — Jovana Đoković">
   <meta property="og:description" content="Behind the scenes photographs from film sets and creative productions.">
   <meta property="og:image" content="bts/pointless_films/1.jpg">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=2">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
-<body class="scrollable">
+
+<body class="scrollable" style="background-color: #310d0d;">
 
   <header class="inner-header">
     <div class="inner-branding">
@@ -54,7 +59,8 @@
       </ul>
       <div class="mobile-drawer-footer">
         <a href="mailto:djokovicjovana77@gmail.com" class="mobile-drawer-email">djokovicjovana77@gmail.com</a>
-        <a href="https://instagram.com/anemoia.7" target="_blank" rel="noopener noreferrer" class="mobile-drawer-social">Instagram @anemoia.7</a>
+        <a href="https://instagram.com/anemoia.7" target="_blank" rel="noopener noreferrer"
+          class="mobile-drawer-social">Instagram @anemoia.7</a>
       </div>
     </div>
   </div>
@@ -152,13 +158,13 @@
     </div>
   </main>
 
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <div class="lightbox-backdrop"></div>
-    <div class="lightbox-content">
-      <img src="" alt="" class="lightbox-img" id="lightboxImg">
-      <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close image">&times;</button>
-    </div>
-  </div>
+  <button type="button" class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll to top">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 16V4M10 4L4 10M10 4L16 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </svg>
+  </button>
+
 
   <script src="site.js"></script>
   <script src="lightbox.js"></script>
@@ -171,7 +177,23 @@
         img.parentElement.setAttribute("data-index", idx);
       });
       initLightbox(imgList, ".bts-photo");
+
+      var scrollBtn = document.getElementById("scrollTopBtn");
+      if (scrollBtn) {
+        window.addEventListener("scroll", function () {
+          if (window.scrollY > 400) {
+            scrollBtn.classList.add("visible");
+          } else {
+            scrollBtn.classList.remove("visible");
+          }
+        }, { passive: true });
+
+        scrollBtn.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
     });
   </script>
 </body>
+
 </html>
